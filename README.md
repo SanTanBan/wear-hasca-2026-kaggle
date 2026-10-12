@@ -56,8 +56,14 @@ Not included: the competition data (Kaggle license), the large prediction arrays
 and saved Kaggle web pages.
 
 ## Kaggle notebooks
-All our kernels are public on Kaggle under [santanubanerjee9](https://www.kaggle.com/santanubanerjee9/code)
-(slugs `wear26-*`; each one embeds `work/src/wear` and runs one entry module with its config). Key ones:
+**[NOTEBOOKS.md](NOTEBOOKS.md) lists all 68 of our Kaggle kernels** (owner
+[santanubanerjee9](https://www.kaggle.com/santanubanerjee9/code), slugs `wear26-*`; each one embeds `work/src/wear` and
+runs one entry module with its config) with what each does and whether it is public yet.
+
+> **Caveat:** some notebooks are still private and show "We can't find that page". If you need one that is
+> inaccessible, open an issue in this repository or message santanubanerjee9 on Kaggle, and it will be made public.
+
+Key ones:
 - [wear26-base](https://www.kaggle.com/code/santanubanerjee9/wear26-base) — re-implemented public pipeline with nested OOF
 - [wear26-l4](https://www.kaggle.com/code/santanubanerjee9/wear26-l4) — L4 links with two successor bi-encoders
   ([wear26-nlink2](https://www.kaggle.com/code/santanubanerjee9/wear26-nlink2),

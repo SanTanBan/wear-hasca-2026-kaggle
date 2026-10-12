@@ -72,8 +72,13 @@ cannot be recovered from unordered tiles: video features encode the activity, no
 - The shared Kaggle account had only 2 GPU sessions for many projects; GPU jobs often waited hours. A notebook patch
   (`WEAR_ABLATION=0`) broke a 97-minute GPU run at its summary cell — test patches on a smoke run first.
 - Check the competition's final-selection limit early instead of assuming two slots.
-- The Kaggle CLI cannot change a kernel's visibility without re-running it; `work/tools/kpublish.py` saves a public
-  version with QUICK_SAVE (no run, no compute).
+- Publishing: the Kaggle API can only change a kernel's visibility by saving a new version, and even a QUICK_SAVE
+  version starts a run on the account's shared CPU sessions (`work/tools/kpublish.py`; 5 notebooks got failed
+  re-runs that way). Saves refused with "Maximum batch CPU session count" still flipped 9 notebooks to public with
+  their original runs. The clean route is Kaggle's web UI (Share -> Public), which needs a signed-in browser; the
+  remaining notebooks are listed in NOTEBOOKS.md and made public on request.
+- Browser automation surfaced two macOS browsers connected to the user's Claude extension although the user has no
+  Mac; they were not used further and the user was advised to disconnect them.
 
 ## 6. If we had more time
 Better successor links (a cross-encoder re-ranker on raw frames; the refiner would gain +0.018 with the true order),

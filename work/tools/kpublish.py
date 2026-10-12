@@ -1,5 +1,10 @@
-"""Make wear26-* Kaggle kernels public WITHOUT re-running them: pull the latest code + metadata and save a new version
-with is_private=False and kernel_execution_type=QUICK_SAVE (the kaggle CLI 'push' always re-runs the kernel).
+"""Make wear26-* Kaggle kernels public: pull the latest code + metadata and save a new version with is_private=False
+and kernel_execution_type=QUICK_SAVE.
+
+CAUTION (observed 2026-10-12): Kaggle still starts a run for a QUICK_SAVE version of a script kernel, on the account's
+shared CPU sessions (5 max) - GPU/TPU kernels are switched to CPU with a 60 s cap below so they cannot use quota. When
+all sessions are busy the save is refused ("Maximum batch CPU session count") but the visibility change still applies,
+keeping the original run. The clean way to publish without a re-run is Kaggle's web UI (Share -> Public).
 
   python tools/kpublish.py wear26-smoke [wear26-base ...]     # or --all (every kernel of ours whose slug starts wear26-)
 """
