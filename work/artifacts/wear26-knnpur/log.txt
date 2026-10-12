@@ -1,0 +1,27 @@
+config: {"threads": 4, "entry": "knnpur"}
+purity@ 5 0.8668  video emb
+purity@ 5 0.9253  video + 0.5 sqrt(P_b) (graph default)
+purity@ 5 0.9274  video + 1.0 sqrt(P_b)
+purity@ 5 0.8598  sqrt(P_b) only
+purity@ 5 0.9431  sqrt(P_graph) only
+purity@ 5 0.9277  video + 0.5 sqrt(P_graph)
+purity@ 5 0.9359  video + 1.0 sqrt(P_graph)
+purity@ 5 0.8311  nlink tail+head
+purity@ 5 0.8675  video + nlink
+purity@ 5 0.9243  video + nlink + 0.5 sqrt(P_b)
+purity@10 0.8308  video emb
+purity@10 0.9083  video + 0.5 sqrt(P_b) (graph default)
+purity@10 0.9124  video + 1.0 sqrt(P_b)
+purity@10 0.8509  sqrt(P_b) only
+purity@10 0.9367  sqrt(P_graph) only
+purity@10 0.9113  video + 0.5 sqrt(P_graph)
+purity@10 0.9227  video + 1.0 sqrt(P_graph)
+purity@10 0.7928  nlink tail+head
+purity@10 0.8310  video + nlink
+purity@10 0.9072  video + nlink + 0.5 sqrt(P_b)
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 371303 bytes to __results__.html

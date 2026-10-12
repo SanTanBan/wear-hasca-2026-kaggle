@@ -1,0 +1,419 @@
+/usr/local/lib/python3.13/dist-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+  _validate(nbdict, ref, version, version_minor, relax_add_props)
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+input /kaggle/input/3rd-wear-dataset-challenge-hasca-2026
+work /kaggle/working
+scratch /tmp/wear
+SMOKE=False GPU={'n': 2, 'name': 'Tesla T4', 'cap': [7, 5], 'torch': '2.11.0+cu128'}
+
+===== W1 preprocessing | start at 0.2 min
+sbj_0: T=139725 (2794s) F=83835 nan=0
+sbj_0_2: T=112050 (2241s) F=67230 nan=0
+sbj_1: T=138900 (2778s) F=83340 nan=0
+sbj_10: T=199250 (3985s) F=119550 nan=154176
+sbj_11: T=111100 (2222s) F=66660 nan=0
+sbj_12: T=163500 (3270s) F=98100 nan=0
+sbj_13: T=198900 (3978s) F=119340 nan=0
+sbj_14: T=160050 (3201s) F=96030 nan=0
+sbj_14_2: T=167750 (3355s) F=100650 nan=0
+sbj_15: T=130150 (2603s) F=78090 nan=0
+sbj_16: T=175500 (3510s) F=105300 nan=0
+sbj_17: T=154550 (3091s) F=92730 nan=0
+sbj_18: T=131600 (2632s) F=78960 nan=0
+sbj_19: T=105450 (2109s) F=63270 nan=0
+sbj_2: T=178200 (3564s) F=106920 nan=0
+sbj_20: T=95400 (1908s) F=57240 nan=0
+sbj_21: T=127800 (2556s) F=76680 nan=0
+sbj_3: T=208550 (4171s) F=125130 nan=0
+sbj_4: T=159575 (3192s) F=95745 nan=0
+sbj_5: T=107525 (2150s) F=64515 nan=0
+sbj_6: T=125175 (2504s) F=75105 nan=0
+sbj_7: T=142650 (2853s) F=85590 nan=0
+sbj_8: T=124750 (2495s) F=74850 nan=0
+sbj_9: T=108300 (2166s) F=64980 nan=0
+test shapes: (12234, 50, 3) (12234, 768, 15) float64
+{'left_leg': 3068, 'right_leg': 3060, 'left_arm': 3058, 'right_arm': 3048} {22: 5197, 23: 3128, 24: 1995, 25: 1914}
+24 recordings, 22 subjects
+===== W1 preprocessing | 2.4 min (total 2.5 min) | RSS 0.6 GB, peak 3.0 GB
+
+===== W2 test-like OOF windows | start at 2.5 min
+rows 69326 folds {0: [5, 14, 17, 21], 1: [0, 4, 9, 15], 2: [3, 7, 11, 12, 19], 3: [1, 8, 10, 16], 4: [2, 6, 13, 18, 20]}
+===== W2 test-like OOF windows | 0.1 min (total 2.6 min) | RSS 0.6 GB, peak 3.0 GB
+Writing train_window.py
+
+===== W3 window models | start at 2.6 min
+runs to train: ['final_s0', 'imu_s0', 'final_s1', 'final_s2', 'final_s3', 'imu_s1'] | already done: []
+queues: [['final_s0', 'imu_s0', 'final_s2'], ['final_s1', 'final_s3', 'imu_s1']] steps [81000, 81000]
+[final_s0] gpu=0 rc=0 7.4 min | OOF macroF1 (no bias) 0.7083
+[final_s1] gpu=1 rc=0 7.3 min | OOF macroF1 (no bias) 0.7087
+[final_s3] gpu=1 rc=0 7.4 min | OOF macroF1 (no bias) 0.7081
+[imu_s0] gpu=0 rc=0 17.7 min | OOF macroF1 (no bias) 0.5944
+[final_s2] gpu=0 rc=0 7.6 min | OOF macroF1 (no bias) 0.7086
+[imu_s1] gpu=1 rc=0 17.8 min | OOF macroF1 (no bias) 0.5951
+fusion runs: ['final_s0', 'final_s1', 'final_s2', 'final_s3'] | IMU-only runs: ['imu_s0', 'imu_s1']
+===== W3 window models | 32.9 min (total 35.5 min) | RSS 0.6 GB, peak 3.0 GB
+
+===== W4 blend | start at 35.5 min
+window-level OOF macro F1: fusion x4 0.7178, IMU-only x2 0.6031, blend 0.7231   (ours with 4F+2I: 0.7194 / 0.5995 / 0.7253)
+test argmax distribution: [6395, 378, 376, 310, 362, 337, 221, 130, 299, 260, 450, 281, 349, 389, 380, 407, 275, 366, 269]
+===== W4 blend | 0.0 min (total 35.5 min) | RSS 0.8 GB, peak 3.0 GB
+Writing train_link.py
+
+===== O1 two-tower boundary matchers (two seeds) | start at 35.5 min
+link : fold 0 step 1000/3000 loss 5.223 [67s]
+fold 0 step 2000/3000 loss 2.420 [131s]
+fold 0 step 3000/3000 loss 1.300 [195s]
+fold 0: held-out top-1 successor accuracy 0.3293 [195s]
+fold 1 step 1000/3000 loss 5.184 [260s]
+fold 1 step 2000/3000 loss 2.406 [324s]
+fold 1 step 3000/3000 loss 1.333 [388s]
+fold 1: held-out top-1 successor accuracy 0.3249 [389s]
+fold 2 step 1000/3000 loss 5.229 [453s]
+fold 2 step 2000/3000 loss 2.477 [517s]
+fold 2 step 3000/3000 loss 1.331 [582s]
+fold 2: held-out top-1 successor accuracy 0.3029 [582s]
+fold 3 step 1000/3000 loss 5.266 [647s]
+fold 3 step 2000/3000 loss 2.493 [711s]
+fold 3 step 3000/3000 loss 1.377 [775s]
+fold 3: held-out top-1 successor accuracy 0.3338 [775s]
+fold 4 step 1000/3000 loss 5.210 [840s]
+fold 4 step 2000/3000 loss 2.489 [904s]
+fold 4 step 3000/3000 loss 1.308 [968s]
+fold 4: held-out top-1 successor accuracy 0.3311 [968s]
+done in 969s
+
+link_s1 : fold 0 step 1000/3000 loss 5.169 [67s]
+fold 0 step 2000/3000 loss 2.379 [131s]
+fold 0 step 3000/3000 loss 1.253 [195s]
+fold 0: held-out top-1 successor accuracy 0.3193 [196s]
+fold 1 step 1000/3000 loss 5.200 [260s]
+fold 1 step 2000/3000 loss 2.437 [324s]
+fold 1 step 3000/3000 loss 1.322 [389s]
+fold 1: held-out top-1 successor accuracy 0.3199 [389s]
+fold 2 step 1000/3000 loss 5.283 [454s]
+fold 2 step 2000/3000 loss 2.480 [518s]
+fold 2 step 3000/3000 loss 1.346 [582s]
+fold 2: held-out top-1 successor accuracy 0.3005 [582s]
+fold 3 step 1000/3000 loss 5.256 [647s]
+fold 3 step 2000/3000 loss 2.498 [711s]
+fold 3 step 3000/3000 loss 1.371 [775s]
+fold 3: held-out top-1 successor accuracy 0.3324 [776s]
+fold 4 step 1000/3000 loss 5.259 [840s]
+fold 4 step 2000/3000 loss 2.437 [904s]
+fold 4 step 3000/3000 loss 1.295 [968s]
+fold 4: held-out top-1 successor accuracy 0.3289 [969s]
+done in 969s
+
+===== O1 two-tower boundary matchers (two seeds) | 16.5 min (total 52.0 min) | RSS 0.8 GB, peak 3.0 GB
+
+===== L0 timeline links | start at 52.0 min
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+fold 0: linked 0.922 exact 0.363 same-label 0.894 [3178s]
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+fold 1: linked 0.929 exact 0.298 same-label 0.875 [3232s]
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+fold 2: linked 0.917 exact 0.330 same-label 0.889 [3284s]
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+fold 3: linked 0.929 exact 0.312 same-label 0.895 [3336s]
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+fold 4: linked 0.928 exact 0.336 same-label 0.882 [3388s]
+L0 OOF: linked 0.925 exact 0.329 same-label 0.887   (ours: 0.924 / 0.330 / 0.887)
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+test sbj 22 n=5197 linked 0.929
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+test sbj 23 n=3128 linked 0.904
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+test sbj 24 n=1995 linked 0.914
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+
+/usr/local/lib/python3.13/dist-packages/sklearn/utils/validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+test sbj 25 n=1914 linked 0.952
+===== L0 timeline links | 5.5 min (total 57.5 min) | RSS 1.2 GB, peak 5.4 GB
+
+===== diagnostic context baseline | start at 57.5 min
+OOF macro F1, window blend + label propagation + L0 link smoothing + calibration: 0.8489
+===== diagnostic context baseline | 0.1 min (total 57.6 min) | RSS 1.2 GB, peak 5.4 GB
+
+===== Plp | start at 57.6 min
+===== Plp | 0.1 min (total 57.7 min) | RSS 1.2 GB, peak 5.4 GB
+
+===== tabular features | start at 57.7 min
+{'oof': {'imu': (69326, 261), 'vmot': (69326, 4), 'vpca': (69326, 96)}, 'test': {'imu': (12234, 261), 'vmot': (12234, 4), 'vpca': (12234, 96)}}
+===== tabular features | 0.5 min (total 58.2 min) | RSS 1.2 GB, peak 5.4 GB
+
+===== tabular experts | start at 58.2 min
+S3: test argmax distribution [5979, 388, 362, 332, 362, 327, 236, 256, 418, 235, 405, 237, 443, 378, 388, 418, 354, 369, 347]
+T: test argmax distribution [7382, 428, 323, 330, 324, 289, 96, 223, 151, 200, 397, 161, 230, 302, 314, 392, 220, 258, 214]
+blended test argmax distribution: [6397, 412, 360, 312, 349, 316, 167, 191, 345, 206, 414, 249, 398, 368, 379, 409, 299, 359, 304]
+S3: nested OOF macro F1 0.8171
+T: nested OOF macro F1 0.6400
+blend B nested OOF macro F1 0.7963; + label propagation + L0 link smoothing + calibration 0.8784
+===== tabular experts | 6.6 min (total 64.8 min) | RSS 1.6 GB, peak 5.4 GB
+
+===== combined links A: ridge boundary predictors | start at 64.8 min
+fold 0: statistics of 71722 tile pairs [3911s]
+fold 1: statistics of 64934 tile pairs [3930s]
+fold 2: statistics of 73080 tile pairs [3953s]
+fold 3: statistics of 63804 tile pairs [3972s]
+fold 4: statistics of 72882 tile pairs [3995s]
+ridge r2 (forward, backward): [(0.579, 0.58), (0.58, 0.58), (0.586, 0.587), (0.585, 0.586), (0.58, 0.581)]   (ours: about 0.58)
+===== combined links A: ridge boundary predictors | 2.0 min (total 66.8 min) | RSS 1.9 GB, peak 5.4 GB
+
+===== combined links B-D: train pair features + LightGBM link scorer | start at 66.8 min
+sbj 0 fold 1 n=5035 K=165 pairs 394459 recall 0.931 [4036s]
+sbj 1 fold 3 n=2778 K=161 pairs 230617 recall 0.921 [4046s]
+sbj 2 fold 4 n=3564 K=164 pairs 281960 recall 0.914 [4062s]
+sbj 3 fold 2 n=4171 K=167 pairs 352428 recall 0.944 [4083s]
+sbj 4 fold 1 n=3191 K=166 pairs 272683 recall 0.920 [4096s]
+sbj 5 fold 0 n=2150 K=153 pairs 169121 recall 0.910 [4102s]
+sbj 6 fold 4 n=2503 K=164 pairs 192199 recall 0.956 [4111s]
+sbj 7 fold 2 n=2853 K=162 pairs 222290 recall 0.910 [4121s]
+sbj 8 fold 3 n=2495 K=160 pairs 186272 recall 0.934 [4129s]
+sbj 9 fold 1 n=2166 K=164 pairs 174580 recall 0.893 [4135s]
+sbj 10 fold 3 n=3985 K=160 pairs 319172 recall 0.943 [4154s]
+sbj 11 fold 2 n=2222 K=163 pairs 172551 recall 0.912 [4161s]
+sbj 12 fold 2 n=3270 K=164 pairs 265168 recall 0.938 [4174s]
+sbj 13 fold 4 n=3978 K=168 pairs 326728 recall 0.940 [4193s]
+sbj 14 fold 0 n=6556 K=166 pairs 537009 recall 0.942 [4238s]
+sbj 15 fold 1 n=2603 K=162 pairs 201612 recall 0.949 [4246s]
+sbj 16 fold 3 n=3510 K=163 pairs 290292 recall 0.910 [4261s]
+sbj 17 fold 0 n=3091 K=160 pairs 233920 recall 0.948 [4274s]
+sbj 18 fold 4 n=2632 K=163 pairs 210654 recall 0.927 [4282s]
+sbj 19 fold 2 n=2109 K=160 pairs 163986 recall 0.932 [4288s]
+sbj 20 fold 4 n=1908 K=162 pairs 150022 recall 0.893 [4293s]
+sbj 21 fold 0 n=2556 K=161 pairs 208315 recall 0.957 [4302s]
+scorer rows 1173696 positive rate 0.0549 candidate recall 0.9304   (ours: 1,173,696 / 0.0549 / 0.930)
+===== combined links B-D: train pair features + LightGBM link scorer | 5.9 min (total 72.7 min) | RSS 2.3 GB, peak 5.4 GB
+
+===== combined links E: test links | start at 72.7 min
+test sbj 22 n=5197 K=170 linked 0.958 median score 0.26 [4448s]
+test sbj 23 n=3128 K=163 linked 0.937 median score 0.58 [4486s]
+test sbj 24 n=1995 K=163 linked 0.959 median score 0.74 [4506s]
+test sbj 25 n=1914 K=134 linked 0.966 median score 0.87 [4525s]
+test linked 0.954 (ours 0.951); raw median score 0.52 (ours 0.52), after qn 0.91
+===== combined links E: test links | 2.7 min (total 75.4 min) | RSS 2.3 GB, peak 5.4 GB
+
+===== graph + calibration + submission | start at 75.4 min
+prediction counts: [5261, 396, 363, 366, 384, 361, 400, 394, 359, 410, 419, 409, 379, 374, 416, 399, 382, 376, 386]
+null share per test subject: {22: 0.662, 23: 0.432, 24: 0.15, 25: 0.089}   (ours: 22 0.66, 23 0.43, 24 0.15, 25 0.09)
+   id  target_feature
+0   0              14
+1   1               0
+2   2               1
+3   3               0
+4   4               0
+===== graph + calibration + submission | 0.1 min (total 75.5 min) | RSS 2.3 GB, peak 5.4 GB
+
+===== O2 pair features of the two boundary models | start at 75.5 min
+===== O2 pair features of the two boundary models | 0.2 min (total 75.7 min) | RSS 2.5 GB, peak 5.4 GB
+
+===== O3 link scorers (out-of-fold + test) | start at 75.7 min
+public L2 out-of-fold links: linked 0.949, exact successor 0.563, same label 0.938
+L3 scorer rows 1173696 features 88
+L3 (ours) out-of-fold links: linked 0.960, exact successor 0.658, same label 0.945
+gain share: public 65 features 0.26, two-tower 16 0.67, self-supervised 7 0.07
+test: linked 0.960; same successor as the public L2 links for 0.646 of the tiles
+===== O3 link scorers (out-of-fold + test) | 32.3 min (total 108.1 min) | RSS 2.8 GB, peak 5.4 GB
+
+===== O3b link bagging (perturbed matchings) | start at 108.1 min
+8 matchings; a perturbed matching keeps 0.842 of the links of the plain one; exact successor 0.649
+8 matchings; a perturbed matching keeps 0.827 of the links of the plain one
+===== O3b link bagging (perturbed matchings) | 0.8 min (total 108.9 min) | RSS 2.8 GB, peak 5.4 GB
+
+===== O4 stage A: bagged L3 links + learned counts | start at 108.9 min
+public pipeline, nested OOF macro F1: 0.9049
+   stage A pass 1: count error 7.73 tiles (fixed 97: 9.79); test means {22: 96.9, 23: 99.7, 24: 90.5, 25: 94.2}
+   stage A pass 2: count error 7.47 tiles (fixed 97: 9.79); test means {22: 96.9, 23: 99.9, 24: 90.1, 25: 93.0}
+stage A: OOF macro F1 one matching, public configs, fixed 97 0.9129 -> bagged, public configs, fixed 97 0.9147 -> bagged, g 1.5, raw embedding, fixed 97 0.9157 -> one matching, fixed 97 0.9129 -> bagged, fixed 97 0.9157 -> learned counts, pass 1 0.9219 -> learned counts, pass 2 0.9229 -> what if: true counts 0.9354 | per fold 0.9228 0.9040 0.9308 0.9120 0.9438
+===== O4 stage A: bagged L3 links + learned counts | 11.6 min (total 120.5 min) | RSS 2.9 GB, peak 5.4 GB
+
+===== O5 pseudo-label adaptation of the tabular expert | start at 120.5 min
+tile-level OOF macro F1: T 0.6400 -> adapted T 0.8326
+===== O5 pseudo-label adaptation of the tabular expert | 10.5 min (total 131.0 min) | RSS 2.8 GB, peak 5.4 GB
+
+===== O6 stage B: final decode | start at 131.0 min
+   stage B pass 1: count error 7.57 tiles (fixed 97: 9.79); test means {22: 97.5, 23: 99.4, 24: 90.9, 25: 94.5}
+   stage B pass 2: count error 7.33 tiles (fixed 97: 9.79); test means {22: 97.8, 23: 99.5, 24: 89.6, 25: 93.2}
+stage B: OOF macro F1 one matching, fixed 97 0.9159 -> bagged, fixed 97 0.9186 -> learned counts, pass 1 0.9239 -> learned counts, pass 2 0.9257 | per fold 0.9254 0.9054 0.9355 0.9182 0.9435
+===== O6 stage B: final decode | 5.1 min (total 136.1 min) | RSS 2.9 GB, peak 5.4 GB
+
+===== O7 boundary refiner along the chains | start at 136.1 min
+146244 candidate (tile, matching) rows, 0.143 should flip; the windows hold 3412 of the 5169 remaining errors
+refiner: 1081 out-of-fold tiles flipped, macro F1 0.9257 -> 0.9288 | per fold 0.9287 0.9084 0.9403 0.9198 0.9461
+test: 151 tiles flipped
+===== O7 boundary refiner along the chains | 0.6 min (total 136.7 min) | RSS 2.9 GB, peak 5.4 GB
+
+===== O8 submission | start at 136.7 min
+prediction counts: [5383, 399, 351, 342, 376, 349, 383, 393, 375, 409, 419, 356, 425, 371, 416, 388, 378, 369, 352]
+null share per test subject: {22: 0.661, 23: 0.422, 24: 0.198, 25: 0.121}
+labels identical to the public pipeline's submission: 0.9541
+
+nested out-of-fold macro F1, step by step:
+  public pipeline (L2 links, 97 tiles per class)          0.9049
+  + L3 links (two-tower + self-supervised features)       0.9129
+  + link bagging (8 matchings)                            0.9147
+  + kNN graph leaning on the links (smoothing 0.5 -> 1.5) 0.9157
+  + learned count prior                                   0.9229
+  + pseudo-label adapted T                                0.9257
+  + boundary refiner along the chains                     0.9288
+===== O8 submission | 0.0 min (total 136.8 min) | RSS 2.9 GB, peak 5.4 GB
+stage times (min):
+  W1 preprocessing                                                2.4
+  W2 test-like OOF windows                                        0.1
+  W3 window models                                               32.9
+  W4 blend                                                        0.0
+  O1 two-tower boundary matchers (two seeds)                     16.5
+  L0 timeline links                                               5.5
+  diagnostic context baseline                                     0.1
+  Plp                                                             0.1
+  tabular features                                                0.5
+  tabular experts                                                 6.6
+  combined links A: ridge boundary predictors                     2.0
+  combined links B-D: train pair features + LightGBM link scorer    5.9
+  combined links E: test links                                    2.7
+  graph + calibration + submission                                0.1
+  O2 pair features of the two boundary models                     0.2
+  O3 link scorers (out-of-fold + test)                           32.3
+  O3b link bagging (perturbed matchings)                          0.8
+  O4 stage A: bagged L3 links + learned counts                   11.6
+  O5 pseudo-label adaptation of the tabular expert               10.5
+  O6 stage B: final decode                                        5.1
+  O7 boundary refiner along the chains                            0.6
+  O8 submission                                                   0.0
+total 136.8 min; submission: /kaggle/working/submission.csv
+/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+[NbConvertApp] Writing 738879 bytes to __notebook__.ipynb
+[NbConvertApp] Converting notebook __notebook__.ipynb to html
+[NbConvertApp] Support files will be in __results___files/
+[NbConvertApp] Making directory __results___files
+[NbConvertApp] Writing 1527933 bytes to __results__.html

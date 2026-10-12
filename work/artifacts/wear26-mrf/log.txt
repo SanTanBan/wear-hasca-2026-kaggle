@@ -1,0 +1,35 @@
+config: {"threads": 4, "entry": "mrf"}
+L2 unary=logp_b lam_l=1 lam_k=1 it=10 bias=0                           raw 0.8181 softcal 0.8444 [1s]
+L2 unary=logp_b lam_l=2 lam_k=1 it=10 bias=0                           raw 0.8238 softcal 0.8402 [1s]
+L2 unary=logp_b lam_l=2 lam_k=2 it=10 bias=0                           raw 0.8250 softcal 0.8405 [1s]
+L2 unary=logp_b lam_l=3 lam_k=1 it=20 bias=0                           raw 0.8256 softcal 0.8343 [1s]
+L2 unary=logp_b lam_l=2 lam_k=1 it=20 bias=0.3                         raw 0.8841 softcal 0.8849 [1s]
+L2 unary=logp_b lam_l=1 lam_k=0.5 it=10 bias=0                         raw 0.8170 softcal 0.8432 [1s]
+L2 unary=logp_b lam_l=4 lam_k=2 it=20 bias=0                           raw 0.8274 softcal 0.8322 [1s]
+L2 unary=graph lam_l=1 lam_k=1 it=10 bias=0                            raw 0.8834 softcal 0.8992 [1s]
+L2 unary=graph lam_l=2 lam_k=1 it=10 bias=0                            raw 0.8837 softcal 0.8922 [1s]
+L2 unary=graph lam_l=2 lam_k=2 it=10 bias=0                            raw 0.8812 softcal 0.8893 [1s]
+L2 unary=graph lam_l=3 lam_k=1 it=20 bias=0                            raw 0.8830 softcal 0.8859 [1s]
+L2 unary=graph lam_l=2 lam_k=1 it=20 bias=0.3                          raw 0.8987 softcal 0.9000 [1s]
+L2 unary=graph lam_l=1 lam_k=0.5 it=10 bias=0                          raw 0.8853 softcal 0.9023 [1s]
+L2 unary=graph lam_l=4 lam_k=2 it=20 bias=0                            raw 0.8817 softcal 0.8830 [1s]
+ORACLE unary=logp_b lam_l=1 lam_k=1 it=10 bias=0                       raw 0.8316 softcal 0.8583 [1s]
+ORACLE unary=logp_b lam_l=2 lam_k=1 it=10 bias=0                       raw 0.8439 softcal 0.8593 [1s]
+ORACLE unary=logp_b lam_l=2 lam_k=2 it=10 bias=0                       raw 0.8435 softcal 0.8571 [1s]
+ORACLE unary=logp_b lam_l=3 lam_k=1 it=20 bias=0                       raw 0.8508 softcal 0.8568 [1s]
+ORACLE unary=logp_b lam_l=2 lam_k=1 it=20 bias=0.3                     raw 0.9112 softcal 0.9117 [1s]
+ORACLE unary=logp_b lam_l=1 lam_k=0.5 it=10 bias=0                     raw 0.8301 softcal 0.8579 [1s]
+ORACLE unary=logp_b lam_l=4 lam_k=2 it=20 bias=0                       raw 0.8515 softcal 0.8525 [1s]
+ORACLE unary=graph lam_l=1 lam_k=1 it=10 bias=0                        raw 0.8971 softcal 0.9131 [1s]
+ORACLE unary=graph lam_l=2 lam_k=1 it=10 bias=0                        raw 0.9033 softcal 0.9121 [1s]
+ORACLE unary=graph lam_l=2 lam_k=2 it=10 bias=0                        raw 0.8991 softcal 0.9084 [1s]
+ORACLE unary=graph lam_l=3 lam_k=1 it=20 bias=0                        raw 0.9052 softcal 0.9092 [1s]
+ORACLE unary=graph lam_l=2 lam_k=1 it=20 bias=0.3                      raw 0.9198 softcal 0.9240 [1s]
+ORACLE unary=graph lam_l=1 lam_k=0.5 it=10 bias=0                      raw 0.9000 softcal 0.9170 [1s]
+ORACLE unary=graph lam_l=4 lam_k=2 it=20 bias=0                        raw 0.9042 softcal 0.9037 [1s]
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 355972 bytes to __results__.html

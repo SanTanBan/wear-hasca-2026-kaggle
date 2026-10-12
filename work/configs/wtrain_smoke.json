@@ -1,0 +1,1 @@
+{"tag": "smoke", "runs": [{"name": "fus_smoke", "seed": 0, "epochs": 1, "steps": 3, "bs": 64}, {"name": "imu_smoke", "seed": 0, "epochs": 1, "steps": 3, "bs": 64, "only": "imu"}]}

@@ -1,0 +1,1 @@
+{"tag": "g1", "runs": [{"name": "fus20_s10", "seed": 10, "epochs": 20}, {"name": "fus20_s11", "seed": 11, "epochs": 20}, {"name": "imu40_s10", "seed": 10, "epochs": 40, "only": "imu"}]}

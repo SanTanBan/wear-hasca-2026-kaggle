@@ -1,0 +1,16 @@
+config: {"threads": 4, "entry": "giter"}
+config {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 5, 'T': 2.0, 'w': 0.5, 'k': 5, 'tau': 0.2}
+iteration 0 (gsweep top-5): 0.9124 [37s]
+iteration 1 knn from refined P, use_p=0.5: 0.9116 [73s]
+iteration 1 knn from refined P, use_p=1.0: 0.9130 [102s]
+iteration 2 knn from refined P, use_p=0.5: 0.9113 [136s]
+iteration 2 knn from refined P, use_p=1.0: 0.9122 [165s]
+kNN update inside rounds: 0.9109
+best 0.9129583965312998 (1, 1.0)
+wrote submission_giter.csv: counts [5409, 378, 367, 336, 374, 352, 388, 382, 356, 386, 417, 392, 369, 377, 439, 403, 378, 363, 368]
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 373270 bytes to __results__.html

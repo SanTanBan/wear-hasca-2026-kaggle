@@ -1,0 +1,1 @@
+{"threads": 4, "tag": "s7", "links_from": "wear26-l4", "multilimb": true, "ml2": true, "chain_windows": true, "rounds": 160, "lgb": {"learning_rate": 0.04, "seed": 7}, "weights": [0.4, 0.5]}

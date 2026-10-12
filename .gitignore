@@ -1,0 +1,20 @@
+# Competition data: Kaggle's competition license does not allow redistribution (6.8 GB anyway)
+/data/
+# Saved Kaggle pages (snapshots of a logged-in account) and text extracts of Kaggle's pages
+*.mhtml
+/notes/page_*.txt
+# Third-party public notebooks: linked in README.md instead of copied
+/notes/public_kernels/
+# Generated kernel folders (rebuilt by tools/kpush.py; some are copies of public notebooks)
+/work/kernels/
+# Large arrays derived from the competition data (predictions + training labels), beyond GitHub's limits
+/work/datasets/
+/work/artifacts/*/*
+!/work/artifacts/wear26-*/log.txt
+/work/daily/lb/
+*.zip
+*.npz
+*.npy
+*.bak
+__pycache__/
+*.pyc

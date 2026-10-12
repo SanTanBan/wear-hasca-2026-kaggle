@@ -1,0 +1,130 @@
+config: {"threads": 4, "entry": "base"}
+
+===== W1 preprocessing | start at 0.0 min
+sbj_0: T=139725 (2794s) F=83835
+sbj_0_2: T=112050 (2241s) F=67230
+sbj_1: T=138900 (2778s) F=83340
+sbj_10: T=199250 (3985s) F=119550
+sbj_11: T=111100 (2222s) F=66660
+sbj_12: T=163500 (3270s) F=98100
+sbj_13: T=198900 (3978s) F=119340
+sbj_14: T=160050 (3201s) F=96030
+sbj_14_2: T=167750 (3355s) F=100650
+sbj_15: T=130150 (2603s) F=78090
+sbj_16: T=175500 (3510s) F=105300
+sbj_17: T=154550 (3091s) F=92730
+sbj_18: T=131600 (2632s) F=78960
+sbj_19: T=105450 (2109s) F=63270
+sbj_2: T=178200 (3564s) F=106920
+sbj_20: T=95400 (1908s) F=57240
+sbj_21: T=127800 (2556s) F=76680
+sbj_3: T=208550 (4171s) F=125130
+sbj_4: T=159575 (3192s) F=95745
+sbj_5: T=107525 (2150s) F=64515
+sbj_6: T=125175 (2504s) F=75105
+sbj_7: T=142650 (2853s) F=85590
+sbj_8: T=124750 (2495s) F=74850
+sbj_9: T=108300 (2166s) F=64980
+===== W1 preprocessing | 1.6 min (total 1.6 min) | RSS 0.2 GB, peak 2.6 GB
+
+===== W2 test-like OOF windows | start at 1.6 min
+===== W2 test-like OOF windows | 0.2 min (total 1.8 min) | RSS 0.2 GB, peak 2.6 GB
+
+===== W window inference | start at 2.2 min
+window models from /kaggle/input/datasets/jiweiliu/wear-timeline-graph-models device cpu
+final_s0: OOF macro F1 0.7106 [118s]
+final_s1: OOF macro F1 0.7106 [230s]
+final_s2: OOF macro F1 0.7039 [341s]
+final_s3: OOF macro F1 0.7107 [451s]
+imu_s0: OOF macro F1 0.5941 [573s]
+imu_s1: OOF macro F1 0.5930 [698s]
+window-level OOF macro F1: fusion 0.7195 imu 0.6005 blend 0.7256  (Briano 4F+2I: 0.7194 / 0.5995 / 0.7253)
+===== W window inference | 11.8 min (total 14.0 min) | RSS 1.3 GB, peak 3.6 GB
+
+===== L0 links | start at 14.0 min
+L0 fold 0 done [911s]
+L0 fold 1 done [981s]
+L0 fold 2 done [1047s]
+L0 fold 3 done [1112s]
+L0 fold 4 done [1176s]
+L0 OOF: linked 0.925 exact(of linked) 0.329 recall(of true) 0.304 same-label 0.888
+L0 test sbj 22 n=5197 linked 0.930
+L0 test sbj 23 n=3128 linked 0.905
+L0 test sbj 24 n=1995 linked 0.917
+L0 test sbj 25 n=1914 linked 0.947
+===== L0 links | 6.9 min (total 20.9 min) | RSS 1.4 GB, peak 5.6 GB
+
+===== Plp | start at 20.9 min
+===== Plp | 0.1 min (total 21.1 min) | RSS 1.4 GB, peak 5.6 GB
+
+===== tabular experts (nested OOF) | start at 21.1 min
+tab S3 fold 0 [1328s]
+tab S3 fold 1 [1356s]
+tab S3 fold 2 [1379s]
+tab S3 fold 3 [1402s]
+tab S3 fold 4 [1424s]
+tab S3: nested OOF macro F1 0.8142
+tab T fold 0 [1487s]
+tab T fold 1 [1522s]
+tab T fold 2 [1556s]
+tab T fold 3 [1591s]
+tab T fold 4 [1626s]
+tab T: nested OOF macro F1 0.6411
+tab blend OOF macro F1 0.7952 (window alone 0.7256)
+===== tabular experts (nested OOF) | 6.8 min (total 27.8 min) | RSS 1.4 GB, peak 5.6 GB
+saved artifacts A: oof ['emb', 'fold', 'fusion_logp', 'imu_logp', 'l0_score', 'l0_succ', 'logp', 'logp_b', 'plp', 'rec', 'sbj', 'sensor', 'start', 'tab_S3', 'tab_T', 'true_succ', 'y'] test ['emb', 'fusion_logp', 'id', 'imu_logp', 'l0_score', 'l0_succ', 'logp', 'logp_b', 'plp', 'sbj', 'sensor', 'tab_S3', 'tab_T']
+
+===== L2 links (OOF fold scorers + test) | start at 28.0 min
+ridge stats fold 0: 71722 tile pairs [1727s]
+ridge stats fold 1: 64934 tile pairs [1770s]
+ridge stats fold 2: 73080 tile pairs [1820s]
+ridge stats fold 3: 63804 tile pairs [1863s]
+ridge stats fold 4: 72882 tile pairs [1912s]
+ridge r2 (forward, backward): [(0.579, 0.58), (0.58, 0.58), (0.586, 0.587), (0.585, 0.586), (0.58, 0.581)] (Briano: about 0.58)
+L2 sbj 0 fold 1 n=5035 K=165 recall 0.931 [1966s]
+L2 sbj 1 fold 3 n=2778 K=161 recall 0.921 [1979s]
+L2 sbj 2 fold 4 n=3564 K=164 recall 0.914 [2001s]
+L2 sbj 3 fold 2 n=4171 K=167 recall 0.944 [2033s]
+L2 sbj 4 fold 1 n=3191 K=166 recall 0.920 [2050s]
+L2 sbj 5 fold 0 n=2150 K=153 recall 0.910 [2058s]
+L2 sbj 6 fold 4 n=2503 K=164 recall 0.956 [2068s]
+L2 sbj 7 fold 2 n=2853 K=162 recall 0.910 [2081s]
+L2 sbj 8 fold 3 n=2495 K=160 recall 0.934 [2092s]
+L2 sbj 9 fold 1 n=2166 K=164 recall 0.893 [2100s]
+L2 sbj 10 fold 3 n=3985 K=160 recall 0.943 [2124s]
+L2 sbj 11 fold 2 n=2222 K=163 recall 0.912 [2132s]
+L2 sbj 12 fold 2 n=3270 K=164 recall 0.938 [2149s]
+L2 sbj 13 fold 4 n=3978 K=168 recall 0.940 [2172s]
+L2 sbj 14 fold 0 n=6556 K=166 recall 0.942 [2229s]
+L2 sbj 15 fold 1 n=2603 K=162 recall 0.949 [2240s]
+L2 sbj 16 fold 3 n=3510 K=163 recall 0.910 [2259s]
+L2 sbj 17 fold 0 n=3091 K=160 recall 0.948 [2274s]
+L2 sbj 18 fold 4 n=2632 K=163 recall 0.927 [2285s]
+L2 sbj 19 fold 2 n=2109 K=160 recall 0.932 [2293s]
+L2 sbj 20 fold 4 n=1908 K=162 recall 0.893 [2300s]
+L2 sbj 21 fold 0 n=2556 K=161 recall 0.957 [2310s]
+scorer rows 1173696 positive rate 0.0549  (Briano: 1,173,696 / 0.0549)
+L2 OOF fold 0 done [2380s]
+L2 OOF fold 1 done [2450s]
+L2 OOF fold 2 done [2520s]
+L2 OOF fold 3 done [2589s]
+L2 OOF fold 4 done [2658s]
+L2 test sbj 22 n=5197 K=170 linked 0.957 median score 0.24
+L2 test sbj 23 n=3128 K=163 linked 0.930 median score 0.61
+L2 test sbj 24 n=1995 K=163 linked 0.959 median score 0.71
+L2 test sbj 25 n=1914 K=134 linked 0.967 median score 0.90
+L2 OOF: linked 0.949 exact(of linked) 0.561 recall(of true) 0.533 same-label 0.937
+===== L2 links (OOF fold scorers + test) | 20.6 min (total 48.6 min) | RSS 1.7 GB, peak 5.6 GB
+
+===== graph + calibration | start at 48.6 min
+OOF macro F1 after graph + calibration: 0.9050  (Briano nested: 0.9053)
+wrote submission.csv: counts [5239, 393, 375, 359, 385, 358, 397, 402, 369, 404, 417, 410, 372, 385, 414, 408, 386, 374, 387]
+===== graph + calibration | 0.3 min (total 48.9 min) | RSS 1.7 GB, peak 5.6 GB
+saved artifacts B: oof ['P_graph', 'emb', 'fold', 'fusion_logp', 'imu_logp', 'l0_score', 'l0_succ', 'l2_score', 'l2_score_qn', 'l2_succ', 'logp', 'logp_b', 'plp', 'rec', 'sbj', 'sensor', 'start', 'tab_S3', 'tab_T', 'true_succ', 'y'] test ['P_graph', 'emb', 'fusion_logp', 'id', 'imu_logp', 'l0_score', 'l0_succ', 'l2_score', 'l2_score_qn', 'l2_succ', 'logp', 'logp_b', 'plp', 'sbj', 'sensor', 'tab_S3', 'tab_T']
+stage times (min): {'W1 preprocessing': 1.6, 'W2 test-like OOF windows': 0.2, 'W window inference': 11.8, 'L0 links': 6.9, 'Plp': 0.1, 'tabular experts (nested OOF)': 6.8, 'L2 links (OOF fold scorers + test)': 20.6, 'graph + calibration': 0.3}
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 320021 bytes to __results__.html

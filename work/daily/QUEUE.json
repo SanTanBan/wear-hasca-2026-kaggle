@@ -1,0 +1,505 @@
+[
+ {
+  "id": "q001",
+  "file": "subs\\s001_base_repro.csv",
+  "message": "own re-implementation of public pipeline (OOF 0.9050), test links from all-subject L2 scorer",
+  "hypothesis": "reproduction check of our test pipeline vs public 0.9077",
+  "priority": 5.0,
+  "status": "submitted",
+  "added": "2026-10-02T08:11+00:00",
+  "submitted_at": "2026-10-02T08:12+00:00"
+ },
+ {
+  "id": "q003",
+  "file": "subs\\s003_gsweep_top5.csv",
+  "message": "graph config sweep top-5 ensemble (k5/tau0.2/rounds5...) + soft Sinkhorn, OOF 0.9124",
+  "hypothesis": "graph hyperparameters retuned for soft calibration (+0.002 OOF over q002)",
+  "priority": 2.0,
+  "status": "submitted",
+  "added": "2026-10-02T08:33+00:00",
+  "submitted_at": "2026-10-02T08:51+00:00"
+ },
+ {
+  "id": "q004",
+  "file": "subs\\s004_blend_gsweep_pgs_cs.csv",
+  "message": "geo blend gsweep(0.5)+post-graph stacker(0.25)+chain stacker graph(0.25), soft Sinkhorn (OOF 0.9143)",
+  "hypothesis": "blend of artifacts/wear26-gsweep/art:gsweep + artifacts/wear26-pgs/art:pgs + artifacts/wear26-decode/art:cs_w0.5",
+  "priority": 0,
+  "status": "skipped",
+  "added": "2026-10-02T08:51+00:00",
+  "reason": "superseded by q007 (OOF 0.9223, LB 0.92276)"
+ },
+ {
+  "id": "q006",
+  "file": "subs\\s006_blend6_equal.csv",
+  "message": "equal-weight geo blend of 6 runs (gsweep, L3, L3_cs, pgs, cs, s3b); soft Sinkhorn; OOF 0.9180",
+  "hypothesis": "robust (untuned) version of the s005 blend",
+  "priority": 3.0,
+  "status": "skipped",
+  "added": "2026-10-02T09:33+00:00",
+  "reason": "superseded by q007 (OOF 0.9223, LB 0.92276)"
+ },
+ {
+  "id": "q012",
+  "file": "subs\\s015_eq_clean915_v2.csv",
+  "message": "equal-weight geo blend of 19 first-level runs (adds S7, S8, L4s soft-target links); soft Sinkhorn (OOF 0.9252)",
+  "hypothesis": "equal-weight geo blend of 19 runs with single OOF >= 0.915",
+  "priority": 4.0,
+  "status": "submitted",
+  "added": "2026-10-02T14:08+00:00",
+  "submitted_at": "2026-10-03T23:11+00:00"
+ },
+ {
+  "id": "q013",
+  "file": "subs\\s016_eq15_learned_counts.csv",
+  "message": "clean equal-weight blend eq15 + learned per-(subject,exercise) counts (ridge on margin profiles), Sinkhorn 3 iters (OOF 0.9253)",
+  "hypothesis": "learned per-(subject, exercise) counts instead of 97 on datasets/wear26-art:eq15, Sinkhorn 3 iters",
+  "priority": 3.0,
+  "status": "skipped",
+  "added": "2026-10-04T14:03+00:00"
+ },
+ {
+  "id": "q014",
+  "file": "subs\\s017_eq_clean_26runs.csv",
+  "message": "equal-weight geo blend of 26 first-level runs (adds S9, S10, V7 seeds) (OOF 0.9256)",
+  "hypothesis": "equal-weight geo blend of 26 runs with single OOF >= 0.915",
+  "priority": 7.0,
+  "status": "submitted",
+  "added": "2026-10-04T14:03+00:00",
+  "submitted_at": "2026-10-04T14:20+00:00"
+ },
+ {
+  "id": "q015",
+  "file": "subs\\v_blend8_T0.7_pe97_nm0.05_it3.csv",
+  "message": "blend8 decode T=0.7 per_ex=97 null_min=0.05 sinkhorn_iters=3 (OOF 0.9230)",
+  "hypothesis": "calibration variant of the best probabilities",
+  "priority": 0.5,
+  "status": "skipped",
+  "added": "2026-10-04T14:03+00:00"
+ },
+ {
+  "id": "q016",
+  "file": "subs\\v_blend8_T0.5_pe97_nm0.05_it5.csv",
+  "message": "blend8 decode T=0.5 per_ex=97 null_min=0.05 sinkhorn_iters=5 (OOF 0.9219)",
+  "hypothesis": "calibration variant of the best probabilities",
+  "priority": 0.5,
+  "status": "skipped",
+  "added": "2026-10-04T14:03+00:00"
+ },
+ {
+  "id": "q017",
+  "file": "subs\\s018_eq17_hh30.csv",
+  "message": "geo blend: our 26-run equal blend (eq17) 0.7 + public notebook honghanhhh/wear-hasca-lb-0-9 final probabilities (temp 2) 0.3; soft Sinkhorn; OOF 0.9273 vs 0.9256",
+  "hypothesis": "an independently trained public pipeline (own window models, learned counts, adapted T) adds diversity: 5.8% of test tiles differ",
+  "priority": 6.0,
+  "status": "submitted",
+  "added": "2026-10-04T14:14+00:00",
+  "submitted_at": "2026-10-04T14:15+00:00"
+ },
+ {
+  "id": "q018",
+  "file": "subs\\s019_eqhh_learned_counts.csv",
+  "message": "eq17+hh blend with learned per-(subject,exercise) counts (ridge on margin profiles) (OOF 0.9271)",
+  "hypothesis": "learned per-(subject, exercise) counts instead of 97 on datasets/wear26-art:eqhh, Sinkhorn 3 iters",
+  "priority": 4.0,
+  "status": "submitted",
+  "added": "2026-10-04T14:14+00:00",
+  "submitted_at": "2026-10-04T14:15+00:00"
+ },
+ {
+  "id": "q019",
+  "file": "subs\\s020_pub_hh_alone.csv",
+  "message": "probe: public notebook honghanhhh/wear-hasca-lb-0-9 submission alone (its nested OOF 0.9219, learned counts + adapted T)",
+  "hypothesis": "calibrates the weight of the public model in our blend",
+  "priority": 5.0,
+  "status": "submitted",
+  "added": "2026-10-04T14:16+00:00",
+  "submitted_at": "2026-10-04T14:17+00:00"
+ },
+ {
+  "id": "q020",
+  "file": "subs\\s021_eq17_hh50.csv",
+  "message": "geo blend eq17 0.5 + public hh (temp 2) 0.5; soft Sinkhorn; OOF 0.9269",
+  "hypothesis": "weight probe for the public model",
+  "priority": 5.0,
+  "status": "submitted",
+  "added": "2026-10-04T14:16+00:00",
+  "submitted_at": "2026-10-04T14:17+00:00"
+ },
+ {
+  "id": "q021",
+  "file": "subs\\s022_eq17_gp50.csv",
+  "message": "geo blend ours eq17 0.5 + public goodpjw2008 0.92942 notebook probabilities (temp 2) 0.5; soft Sinkhorn (OOF 0.9286)",
+  "hypothesis": "geo blend ours 0.5 (datasets/wear26-art:eq17) + public runs gp equal share",
+  "priority": 9.0,
+  "status": "submitted",
+  "added": "2026-10-04T14:51+00:00",
+  "submitted_at": "2026-10-04T14:52+00:00"
+ },
+ {
+  "id": "q022",
+  "file": "subs\\s023_eq17_gp25_hh25.csv",
+  "message": "geo blend ours eq17 0.5 + goodpjw2008 0.25 + honghanhhh 0.25 (temp 2); soft Sinkhorn (OOF 0.9283)",
+  "hypothesis": "geo blend ours 0.5 (datasets/wear26-art:eq17) + public runs gp+hh equal share",
+  "priority": 8.5,
+  "status": "submitted",
+  "added": "2026-10-04T14:51+00:00",
+  "submitted_at": "2026-10-04T14:52+00:00"
+ },
+ {
+  "id": "q023",
+  "file": "subs\\s024_eq17_35_gp65.csv",
+  "message": "geo blend ours eq17 0.35 + goodpjw2008 0.65 (temp 2): public-weight probe (OOF 0.9277)",
+  "hypothesis": "geo blend ours 0.35 (datasets/wear26-art:eq17) + public runs gp equal share",
+  "priority": 8.0,
+  "status": "submitted",
+  "added": "2026-10-04T14:51+00:00",
+  "submitted_at": "2026-10-04T14:52+00:00"
+ },
+ {
+  "id": "q024",
+  "file": "subs\\s025_eq17_gpref50.csv",
+  "message": "geo blend ours eq17 0.5 + goodpjw2008 probabilities with its boundary-refiner flips carried in (temp 2) 0.5 (OOF 0.9293)",
+  "hypothesis": "geo blend ours 0.5 (datasets/wear26-art:eq17) + public runs gp equal share",
+  "priority": 9.0,
+  "status": "submitted",
+  "added": "2026-10-04T14:56+00:00",
+  "submitted_at": "2026-10-04T14:57+00:00"
+ },
+ {
+  "id": "q025",
+  "file": "subs\\s026_eq17_35_gpref65.csv",
+  "message": "geo blend ours eq17 0.35 + goodpjw2008 refined-swapped probabilities 0.65 (temp 2) (OOF 0.9287)",
+  "hypothesis": "geo blend ours 0.35 (datasets/wear26-art:eq17) + public runs gp equal share",
+  "priority": 8.9,
+  "status": "submitted",
+  "added": "2026-10-04T14:56+00:00",
+  "submitted_at": "2026-10-04T14:57+00:00"
+ },
+ {
+  "id": "q026",
+  "file": "subs\\s027_gp_qb_soft97.csv",
+  "message": "probe: goodpjw2008 probabilities (pre-refiner) decoded with OUR soft Sinkhorn 97 (OOF 0.9235)",
+  "hypothesis": "if public drops well below its own 0.92942, our decode (fixed 97, soft) is what costs our blends",
+  "priority": 9.9,
+  "status": "submitted",
+  "added": "2026-10-04T15:14+00:00",
+  "submitted_at": "2026-10-05T01:47+00:00"
+ },
+ {
+  "id": "q027",
+  "file": "subs\\s028_gp_qb_argmax.csv",
+  "message": "probe: goodpjw2008 probabilities argmax = its learned-count decode without the boundary refiner (OOF 0.9243)",
+  "hypothesis": "public effect of its refiner (OOF +0.003)",
+  "priority": 9.8,
+  "status": "submitted",
+  "added": "2026-10-04T15:14+00:00",
+  "submitted_at": "2026-10-05T01:48+00:00"
+ },
+ {
+  "id": "q028",
+  "file": "subs\\s029_ref1_eqgp65q_thr06.csv",
+  "message": "boundary refiner along 5 link sets (L2, L3, L4, L6, L4s) on ours 0.35 + goodpjw 0.65 (q023 0.92762); thr 0.6; OOF 0.9277 -> 0.9296",
+  "hypothesis": "goodpjw-style refiner re-judges tiles around label changes along our chains (+0.0019 OOF, 105 test flips)",
+  "priority": 9.7,
+  "status": "submitted",
+  "added": "2026-10-04T15:15+00:00",
+  "submitted_at": "2026-10-05T01:48+00:00"
+ },
+ {
+  "id": "q029",
+  "file": "subs\\s030_ref1_eqgp65q_thr05.csv",
+  "message": "same refiner, thr 0.5; OOF 0.9294 (171 test flips)",
+  "hypothesis": "refiner threshold probe",
+  "priority": 9.9,
+  "status": "submitted",
+  "added": "2026-10-04T15:15+00:00",
+  "submitted_at": "2026-10-05T01:49+00:00"
+ },
+ {
+  "id": "q030",
+  "file": "subs\\s031_ref2_eqgp_thr06.csv",
+  "message": "boundary refiner (5 link sets) on ours 0.5 + goodpjw 0.5 (q021 0.92704); thr 0.6; OOF 0.9286 -> 0.9295 (97 test flips)",
+  "hypothesis": "refiner on the 50/50 blend",
+  "priority": 9.6,
+  "status": "submitted",
+  "added": "2026-10-04T15:20+00:00",
+  "submitted_at": "2026-10-05T01:48+00:00"
+ },
+ {
+  "id": "q031",
+  "file": "subs\\s032_ref5_gp80_thr06.csv",
+  "message": "HIGH-RISK: refiner (thr 0.6) on public-heavy blend ours 0.2 + goodpjw 0.8; OOF 0.9262 -> 0.9285 (134 test flips)",
+  "hypothesis": "public LB has rewarded more goodpjw weight (0.5 -> 0.65: +0.0006) and refiner gains; tests 0.8",
+  "priority": 9.5,
+  "status": "submitted",
+  "added": "2026-10-05T02:08+00:00",
+  "submitted_at": "2026-10-05T02:09+00:00"
+ },
+ {
+  "id": "q032",
+  "file": "subs\\s033_ref6_eqgphh_thr06.csv",
+  "message": "HIGH-RISK: refiner (thr 0.6) on three-way ours 0.35 + goodpjw 0.45 + honghanhhh 0.2; OOF 0.9278 -> 0.9284 (106 test flips)",
+  "hypothesis": "a third independent pipeline in the refined blend (plain three-way was +0.0002 public)",
+  "priority": 9.4,
+  "status": "submitted",
+  "added": "2026-10-05T02:08+00:00",
+  "submitted_at": "2026-10-05T02:09+00:00"
+ },
+ {
+  "id": "q033",
+  "file": "subs\\s034_ref7_gp90_thr06.csv",
+  "message": "refiner (thr 0.6) on ours 0.1 + goodpjw 0.9; OOF 0.9246 -> 0.9278 (153 test flips)",
+  "hypothesis": "weight curve: refined 0.5 0.92937, 0.65 0.92977, 0.8 0.93149",
+  "priority": 9.5,
+  "status": "submitted",
+  "added": "2026-10-05T02:17+00:00",
+  "submitted_at": "2026-10-05T02:17+00:00"
+ },
+ {
+  "id": "q034",
+  "file": "subs\\s035_ref8_gpalone_thr06.csv",
+  "message": "our refiner (thr 0.6, 5 link sets) on goodpjw probabilities alone; OOF 0.9228 -> 0.9274 (176 test flips)",
+  "hypothesis": "vs goodpjw's own refiner 0.92942: does our refiner/decode beat theirs, and does ours add anything at 0.2?",
+  "priority": 9.4,
+  "status": "submitted",
+  "added": "2026-10-05T02:17+00:00",
+  "submitted_at": "2026-10-05T02:17+00:00"
+ },
+ {
+  "id": "q035",
+  "file": "subs\\s036_ref5_gp80_thr065.csv",
+  "message": "fallback: refiner thr 0.65 on ours 0.2 + goodpjw 0.8 (best blend, q031 0.93149 at thr 0.6); OOF 0.9279 (104 test flips)",
+  "hypothesis": "threshold check on the best blend; fewer flips",
+  "priority": 5.0,
+  "status": "ready",
+  "added": "2026-10-05T02:18+00:00"
+ },
+ {
+  "id": "q036",
+  "file": "subs\\s040_gpjw1_own.csv",
+  "message": "q036 our seed-1 run of goodpjw notebook, its own refined labels (OOF 0.9288; goodpjw seed-0 got 0.92942 public)",
+  "hypothesis": "seed variance of the goodpjw pipeline on public; baseline for seed-averaged blends",
+  "priority": 7.0,
+  "status": "submitted",
+  "added": "2026-10-08T15:03+00:00",
+  "submitted_at": "2026-10-11T06:42+00:00"
+ },
+ {
+  "id": "q037",
+  "file": "subs\\s041_ref9_g3w20_thr06.csv",
+  "message": "refiner thr 0.6 on ours 0.2 + 3 goodpjw-family runs (gp seed0, our gpjw seed1, sj bagged); OOF 0.9279 -> 0.9302 (140 test flips)",
+  "hypothesis": "best recipe (q031 0.93149) with seed-averaged public pipelines; OOF +0.0017 over q031",
+  "priority": 9.9,
+  "status": "submitted",
+  "added": "2026-10-11T06:29+00:00",
+  "submitted_at": "2026-10-11T06:41+00:00"
+ },
+ {
+  "id": "q038",
+  "file": "subs\\s042_ref10_g2w20_thr06.csv",
+  "message": "refiner thr 0.6 on ours 0.2 + gp seed0 + gpjw seed1; OOF 0.9277 -> 0.9298 (130 test flips)",
+  "hypothesis": "two-seed average of goodpjw pipeline vs three-way incl. sj",
+  "priority": 9.8,
+  "status": "submitted",
+  "added": "2026-10-11T06:29+00:00",
+  "submitted_at": "2026-10-11T06:41+00:00"
+ },
+ {
+  "id": "q039",
+  "file": "subs\\s043_ref9_g3w20_thr055.csv",
+  "message": "refiner thr 0.55 on g3w20; OOF 0.9303 (178 test flips)",
+  "hypothesis": "threshold check on the new best-OOF blend",
+  "priority": 9.0,
+  "status": "submitted",
+  "added": "2026-10-11T06:29+00:00",
+  "submitted_at": "2026-10-11T06:42+00:00"
+ },
+ {
+  "id": "q040",
+  "file": "subs\\s044_ref10_g2w20_thr065.csv",
+  "message": "refiner thr 0.65 on g2w20; OOF 0.9298 (106 test flips)",
+  "hypothesis": "fewer flips on two-seed blend",
+  "priority": 8.0,
+  "status": "submitted",
+  "added": "2026-10-11T06:29+00:00",
+  "submitted_at": "2026-10-11T06:42+00:00"
+ },
+ {
+  "id": "q041",
+  "file": "subs\\s045_ref12_g3w35_thr06.csv",
+  "message": "refiner thr 0.6 on ours 0.35 + gp/gpjw1/sj; OOF 0.9291 -> 0.9308 (120 test flips)",
+  "hypothesis": "more weight on ours with three public seeds; OOF prefers it (+0.0006 over g3w20)",
+  "priority": 9.7,
+  "status": "submitted",
+  "added": "2026-10-11T06:36+00:00",
+  "submitted_at": "2026-10-11T06:42+00:00"
+ },
+ {
+  "id": "q042",
+  "file": "subs\\s046_ref11_g3w0_thr06.csv",
+  "message": "HIGH-RISK: refiner thr 0.6 on public runs only (gp/gpjw1/sj, no ours); OOF 0.9258 -> 0.9296 (161 test flips)",
+  "hypothesis": "public LB favoured goodpjw-heavy blends; does dropping our pipeline help on public?",
+  "priority": 7.5,
+  "status": "submitted",
+  "added": "2026-10-11T06:36+00:00",
+  "submitted_at": "2026-10-11T06:42+00:00"
+ },
+ {
+  "id": "q043",
+  "file": "subs\\s047_ref14_x1w20_thr06.csv",
+  "message": "refiner thr 0.6 on ours 0.2 + goodpjw part-2 ranked-links run 0.8 (its LB 0.92990); OOF 0.9296 -> 0.9322 (102 test flips)",
+  "hypothesis": "best recipe (q031) on the newer, stronger public pipeline; best OOF so far",
+  "priority": 10.0,
+  "status": "submitted",
+  "added": "2026-10-11T06:40+00:00",
+  "submitted_at": "2026-10-11T06:41+00:00"
+ },
+ {
+  "id": "q044",
+  "file": "subs\\s048_ref13_g4w20_thr06.csv",
+  "message": "refiner thr 0.6 on ours 0.2 + 4 goodpjw-family runs (gp, gpjw1, sj, ranked-links); OOF 0.9286 -> 0.9306 (146 test flips)",
+  "hypothesis": "seed/variant averaging of public pipelines vs the single strongest one",
+  "priority": 9.95,
+  "status": "submitted",
+  "added": "2026-10-11T06:40+00:00",
+  "submitted_at": "2026-10-11T06:41+00:00"
+ },
+ {
+  "id": "q045",
+  "file": "subs\\s049_ref15_x1w40_thr06.csv",
+  "message": "refiner thr 0.6 on ours 0.4 + goodpjw ranked-links 0.6; OOF 0.9307 -> 0.9321 (110 test flips)",
+  "hypothesis": "weight curve on the new public pipeline: OOF optimum 0.4 vs public-preferred 0.2",
+  "priority": 10.5,
+  "status": "submitted",
+  "added": "2026-10-11T06:50+00:00",
+  "submitted_at": "2026-10-11T06:50+00:00"
+ },
+ {
+  "id": "q046",
+  "file": "subs\\s050_ref13_g4w20_thr055.csv",
+  "message": "refiner thr 0.55 on g4w20 (best 0.93326 at thr 0.6)",
+  "hypothesis": "thr 0.55 beat 0.6 by +0.0009 on g3w20 public",
+  "priority": 10.0,
+  "status": "submitted",
+  "added": "2026-10-11T06:54+00:00",
+  "submitted_at": "2026-10-12T15:23+00:00"
+ },
+ {
+  "id": "q047",
+  "file": "subs\\s051_ref16_g4w35_thr06.csv",
+  "message": "refiner thr 0.6 on ours 0.35 + 4 goodpjw-family runs; OOF 0.9295 -> 0.9314 (114 test flips)",
+  "hypothesis": "more weight on ours with 4 public runs (q044 0.93326 at ours 0.2)",
+  "priority": 9.9,
+  "status": "ready",
+  "added": "2026-10-11T07:12+00:00"
+ },
+ {
+  "id": "q048",
+  "file": "subs\\s052_ref16_g4w35_thr055.csv",
+  "message": "refiner thr 0.55 on g4w35; OOF 0.9313 (136 test flips)",
+  "hypothesis": "thr 0.55 on the 4-run blend at ours 0.35",
+  "priority": 9.8,
+  "status": "ready",
+  "added": "2026-10-11T07:12+00:00"
+ },
+ {
+  "id": "q049",
+  "file": "subs\\s053_ref17_g6w20_thr06.csv",
+  "message": "refiner thr 0.6 on ours 0.2 + 6 goodpjw-family runs (gp, gpjw1, sj, ranked-links + our ranked-links seeds 3/6); OOF 0.9286 -> 0.9305 (119 test flips)",
+  "hypothesis": "best recipe q044 (0.93326) plus two independent seeds of the strongest public pipeline",
+  "priority": 10.5,
+  "status": "submitted",
+  "added": "2026-10-11T12:10+00:00",
+  "submitted_at": "2026-10-12T15:22+00:00"
+ },
+ {
+  "id": "q050",
+  "file": "subs\\s054_ref17_g6w20_thr055.csv",
+  "message": "refiner thr 0.55 on g6w20; OOF 0.9306 (146 test flips)",
+  "hypothesis": "thr 0.55 matched/beat 0.6 on public (q039 0.93323)",
+  "priority": 10.4,
+  "status": "submitted",
+  "added": "2026-10-11T12:10+00:00",
+  "submitted_at": "2026-10-12T15:22+00:00"
+ },
+ {
+  "id": "q051",
+  "file": "subs\\s055_ref18_g6w35_thr06.csv",
+  "message": "refiner thr 0.6 on ours 0.35 + 6 goodpjw-family runs; OOF 0.9296 -> 0.9312 (95 test flips)",
+  "hypothesis": "more weight on ours with six public runs",
+  "priority": 10.2,
+  "status": "submitted",
+  "added": "2026-10-11T12:10+00:00",
+  "submitted_at": "2026-10-12T15:22+00:00"
+ },
+ {
+  "id": "q052",
+  "file": "subs\\s056_ref19_g3x_w20_thr06.csv",
+  "message": "refiner thr 0.6 on ours 0.2 + 3 ranked-links runs (public + our seeds 3/6); OOF 0.9281 -> 0.9308 (129 test flips)",
+  "hypothesis": "seed-averaged strongest pipeline only (single run q043 0.93185)",
+  "priority": 10.1,
+  "status": "submitted",
+  "added": "2026-10-11T12:10+00:00",
+  "submitted_at": "2026-10-12T15:22+00:00"
+ },
+ {
+  "id": "q053",
+  "file": "subs\\s057_ref20_x3w40_thr06.csv",
+  "message": "refiner thr 0.6 on ours 0.4 + 3 ranked-links runs; OOF 0.9294 -> 0.9313 (92 test flips)",
+  "hypothesis": "OOF-preferred weight on the seed-averaged ranked-links runs",
+  "priority": 9.95,
+  "status": "submitted",
+  "added": "2026-10-11T12:10+00:00",
+  "submitted_at": "2026-10-12T15:23+00:00"
+ },
+ {
+  "id": "q054",
+  "file": "subs\\s058_ref19_x3w20_thr055.csv",
+  "message": "refiner thr 0.55 on x3w20; OOF 0.9308 (149 test flips)",
+  "hypothesis": "threshold check on the 3-seed ranked-links blend",
+  "priority": 9.6,
+  "status": "ready",
+  "added": "2026-10-11T12:10+00:00"
+ },
+ {
+  "id": "q055",
+  "file": "artifacts\\wear26-ref21\\submission_ref21_p1_thr0.6.csv",
+  "message": "refiner thr 0.6 on ours 0.2 + 7 goodpjw-family runs (adds our ranked-links seed 9); OOF 0.9288 -> 0.9312 (126 test flips)",
+  "hypothesis": "one more independent seed in the best-public recipe family (g4w20 0.93326)",
+  "priority": 11.0,
+  "status": "submitted",
+  "added": "2026-10-12T15:35+00:00",
+  "submitted_at": "2026-10-12T15:35+00:00"
+ },
+ {
+  "id": "q056",
+  "file": "artifacts\\wear26-ref21\\submission_ref21_p1_thr0.55.csv",
+  "message": "refiner thr 0.55 on g7w20; OOF ~0.9312",
+  "hypothesis": "thr 0.55 matched/beat 0.6 on multi-run blends",
+  "priority": 10.9,
+  "status": "submitted",
+  "added": "2026-10-12T15:35+00:00",
+  "submitted_at": "2026-10-12T15:35+00:00"
+ },
+ {
+  "id": "q057",
+  "file": "artifacts\\wear26-ref22\\submission_ref22_p1_thr0.6.csv",
+  "message": "refiner thr 0.6 on ours 0.4 + 4 ranked-links runs (public + our seeds 3/6/9); OOF 0.9292 -> 0.9313 (94 test flips)",
+  "hypothesis": "ranked-links seed averaging with heavier ours (OOF-preferred)",
+  "priority": 10.8,
+  "status": "submitted",
+  "added": "2026-10-12T15:35+00:00",
+  "submitted_at": "2026-10-12T15:35+00:00"
+ },
+ {
+  "id": "q058",
+  "file": "artifacts\\wear26-ref22\\submission_ref22_p1_thr0.55.csv",
+  "message": "refiner thr 0.55 on x4w40; OOF ~0.9313",
+  "hypothesis": "threshold variant of x4w40",
+  "priority": 10.7,
+  "status": "submitted",
+  "added": "2026-10-12T15:35+00:00",
+  "submitted_at": "2026-10-12T15:35+00:00"
+ }
+]

@@ -1,0 +1,1 @@
+{"threads": 4, "tag": "s9", "links_from": "wear26-l6", "multilimb": true, "ml2": true, "chain_windows": true, "rounds": 80, "lgb": {"seed": 9}, "weights": [0.4, 0.5]}

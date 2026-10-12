@@ -1,0 +1,86 @@
+config: {"threads": 4, "nl_tags": ["v1", "v2", "v3"], "kr": 20, "kc": 10, "chainstack": false, "nl_emb_graph": false, "cs_on_l2": false, "entry": "l3"}
+
+===== W1 preprocessing | start at 0.0 min
+sbj_0: T=139725 (2794s) F=83835
+sbj_0_2: T=112050 (2241s) F=67230
+sbj_1: T=138900 (2778s) F=83340
+sbj_10: T=199250 (3985s) F=119550
+sbj_11: T=111100 (2222s) F=66660
+sbj_12: T=163500 (3270s) F=98100
+sbj_13: T=198900 (3978s) F=119340
+sbj_14: T=160050 (3201s) F=96030
+sbj_14_2: T=167750 (3355s) F=100650
+sbj_15: T=130150 (2603s) F=78090
+sbj_16: T=175500 (3510s) F=105300
+sbj_17: T=154550 (3091s) F=92730
+sbj_18: T=131600 (2632s) F=78960
+sbj_19: T=105450 (2109s) F=63270
+sbj_2: T=178200 (3564s) F=106920
+sbj_20: T=95400 (1908s) F=57240
+sbj_21: T=127800 (2556s) F=76680
+sbj_3: T=208550 (4171s) F=125130
+sbj_4: T=159575 (3192s) F=95745
+sbj_5: T=107525 (2150s) F=64515
+sbj_6: T=125175 (2504s) F=75105
+sbj_7: T=142650 (2853s) F=85590
+sbj_8: T=124750 (2495s) F=74850
+sbj_9: T=108300 (2166s) F=64980
+===== W1 preprocessing | 2.7 min (total 2.7 min) | RSS 0.3 GB, peak 2.8 GB
+
+===== W2 test-like OOF windows | start at 2.7 min
+===== W2 test-like OOF windows | 0.1 min (total 2.7 min) | RSS 0.3 GB, peak 2.8 GB
+L2 OOF: linked 0.949 exact(of linked) 0.561 recall(of true) 0.533 same-label 0.937
+
+===== L3 links | start at 2.9 min
+ridge stats fold 0: 71722 tile pairs [218s]
+ridge stats fold 1: 64934 tile pairs [260s]
+ridge stats fold 2: 73080 tile pairs [307s]
+ridge stats fold 3: 63804 tile pairs [350s]
+ridge stats fold 4: 72882 tile pairs [398s]
+ridge r2 (forward, backward): [(0.579, 0.58), (0.58, 0.58), (0.586, 0.587), (0.585, 0.586), (0.58, 0.581)] (Briano: about 0.58)
+L3 sbj 0 fold 1 n=5035 K=168 recall 0.985 nl-top1 0.236 nl-dual-top1 0.272 nl-dual same-label 0.850 [460s]
+L3 sbj 1 fold 3 n=2778 K=168 recall 0.986 nl-top1 0.277 nl-dual-top1 0.317 nl-dual same-label 0.813 [477s]
+L3 sbj 2 fold 4 n=3564 K=164 recall 0.978 nl-top1 0.238 nl-dual-top1 0.268 nl-dual same-label 0.856 [503s]
+L3 sbj 3 fold 2 n=4171 K=170 recall 0.983 nl-top1 0.237 nl-dual-top1 0.272 nl-dual same-label 0.902 [538s]
+L3 sbj 4 fold 1 n=3191 K=168 recall 0.978 nl-top1 0.262 nl-dual-top1 0.303 nl-dual same-label 0.825 [560s]
+L3 sbj 5 fold 0 n=2150 K=164 recall 0.982 nl-top1 0.282 nl-dual-top1 0.317 nl-dual same-label 0.840 [570s]
+L3 sbj 6 fold 4 n=2503 K=163 recall 0.991 nl-top1 0.289 nl-dual-top1 0.327 nl-dual same-label 0.858 [584s]
+L3 sbj 7 fold 2 n=2853 K=163 recall 0.978 nl-top1 0.228 nl-dual-top1 0.270 nl-dual same-label 0.807 [602s]
+L3 sbj 8 fold 3 n=2495 K=162 recall 0.983 nl-top1 0.206 nl-dual-top1 0.239 nl-dual same-label 0.889 [615s]
+L3 sbj 9 fold 1 n=2166 K=164 recall 0.958 nl-top1 0.214 nl-dual-top1 0.248 nl-dual same-label 0.832 [626s]
+L3 sbj 10 fold 3 n=3985 K=169 recall 0.984 nl-top1 0.238 nl-dual-top1 0.274 nl-dual same-label 0.909 [659s]
+L3 sbj 11 fold 2 n=2222 K=163 recall 0.980 nl-top1 0.237 nl-dual-top1 0.265 nl-dual same-label 0.879 [671s]
+L3 sbj 12 fold 2 n=3270 K=165 recall 0.980 nl-top1 0.249 nl-dual-top1 0.286 nl-dual same-label 0.878 [694s]
+L3 sbj 13 fold 4 n=3978 K=167 recall 0.985 nl-top1 0.291 nl-dual-top1 0.328 nl-dual same-label 0.887 [727s]
+L3 sbj 14 fold 0 n=6556 K=169 recall 0.981 nl-top1 0.254 nl-dual-top1 0.296 nl-dual same-label 0.870 [805s]
+L3 sbj 15 fold 1 n=2603 K=164 recall 0.992 nl-top1 0.236 nl-dual-top1 0.268 nl-dual same-label 0.881 [819s]
+L3 sbj 16 fold 3 n=3510 K=170 recall 0.973 nl-top1 0.233 nl-dual-top1 0.264 nl-dual same-label 0.869 [846s]
+L3 sbj 17 fold 0 n=3091 K=164 recall 0.987 nl-top1 0.221 nl-dual-top1 0.256 nl-dual same-label 0.891 [866s]
+L3 sbj 18 fold 4 n=2632 K=164 recall 0.978 nl-top1 0.256 nl-dual-top1 0.298 nl-dual same-label 0.861 [881s]
+L3 sbj 19 fold 2 n=2109 K=165 recall 0.985 nl-top1 0.217 nl-dual-top1 0.244 nl-dual same-label 0.843 [891s]
+L3 sbj 20 fold 4 n=1908 K=163 recall 0.959 nl-top1 0.191 nl-dual-top1 0.219 nl-dual same-label 0.827 [900s]
+L3 sbj 21 fold 0 n=2556 K=170 recall 0.992 nl-top1 0.269 nl-dual-top1 0.313 nl-dual same-label 0.864 [914s]
+L3 scorer rows 1177232 positive rate 0.0578
+L3 OOF fold 0 done [1005s]
+L3 OOF fold 1 done [1091s]
+L3 OOF fold 2 done [1176s]
+L3 OOF fold 3 done [1261s]
+L3 OOF fold 4 done [1346s]
+L3 top features by gain: [('n_src', 0.402), ('rs_rank_r', 0.109), ('rs_domr', 0.037), ('imu_rank_r', 0.037), ('imu_dom_r', 0.029), ('nld_v2_dom_r', 0.025), ('nld_v2_dom_c', 0.02), ('mmc', 0.019), ('slope', 0.017), ('imu_rank_c', 0.017), ('nld_v1_dom_r', 0.016), ('nld_v2_rank_c', 0.016), ('nld_v3_dom_r', 0.015), ('nld_v1_dom_c', 0.015), ('rank_r', 0.013), ('nld_v1_rank_r', 0.013), ('dratio', 0.011), ('bc_lp', 0.01), ('ll_f_domc', 0.01), ('pooled', 0.01)]
+L3 test sbj 22 n=5197 K=169 linked 0.956 median score 1.32
+L3 test sbj 23 n=3128 K=163 linked 0.934 median score 1.48
+L3 test sbj 24 n=1995 K=160 linked 0.964 median score 1.61
+L3 test sbj 25 n=1914 K=143 linked 0.972 median score 1.93
+L3 OOF: linked 0.956 exact(of linked) 0.614 recall(of true) 0.587 same-label 0.940
+===== L3 links | 24.8 min (total 27.7 min) | RSS 1.9 GB, peak 7.4 GB
+
+===== graph with L3 links | start at 27.7 min
+OOF macro F1: graph with L2 0.9050 -> with L3 0.9102
+wrote submission_L3.csv: counts [5235, 395, 370, 364, 383, 365, 396, 402, 374, 406, 414, 418, 366, 375, 422, 400, 385, 378, 386]
+===== graph with L3 links | 0.3 min (total 28.0 min) | RSS 1.9 GB, peak 7.4 GB
+/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 396732 bytes to __results__.html

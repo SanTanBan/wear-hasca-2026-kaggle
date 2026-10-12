@@ -1,0 +1,61 @@
+config: {"threads": 4, "entry": "gsweep"}
+soft 0.9109 full 0.9049  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5}  [12s]
+soft 0.9087 full 0.9033  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.9, 'rounds': 3, 'T': 2.0, 'w': 0.5}  [15s]
+soft 0.9104 full 0.9052  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.93, 'rounds': 3, 'T': 2.0, 'w': 0.5}  [18s]
+soft 0.9104 full 0.9041  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.97, 'rounds': 3, 'T': 2.0, 'w': 0.5}  [21s]
+soft 0.9095 full 0.9034  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.98, 'rounds': 3, 'T': 2.0, 'w': 0.5}  [24s]
+soft 0.9049 full 0.9018  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.4, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5}  [27s]
+soft 0.9086 full 0.9042  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.6, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5}  [30s]
+soft 0.9096 full 0.9017  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 1.0, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5}  [33s]
+soft 0.9107 full 0.9042  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -3.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5}  [44s]
+soft 0.9105 full 0.9050  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -1.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5}  [56s]
+soft 0.9085 full 0.9046  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': 0.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5}  [67s]
+soft 0.9084 full 0.9036  {'emb_g': 0.0, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5}  [78s]
+soft 0.9117 full 0.9053  {'emb_g': 1.0, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5}  [90s]
+soft 0.9053 full 0.9017  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 1, 'T': 2.0, 'w': 0.5}  [100s]
+soft 0.9104 full 0.9049  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 2, 'T': 2.0, 'w': 0.5}  [101s]
+soft 0.9109 full 0.9050  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 4, 'T': 2.0, 'w': 0.5}  [105s]
+soft 0.9111 full 0.9049  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 5, 'T': 2.0, 'w': 0.5}  [109s]
+soft 0.9093 full 0.9043  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.3}  [112s]
+soft 0.9102 full 0.9044  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.7}  [115s]
+soft 0.9062 full 0.9024  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.9}  [117s]
+soft 0.9072 full 0.9051  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 1.0, 'w': 0.5}  [120s]
+soft 0.9107 full 0.9040  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 3.0, 'w': 0.5}  [122s]
+soft 0.9120 full 0.9057  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5, 'k': 5}  [125s]
+soft 0.9093 full 0.9040  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5, 'k': 15}  [128s]
+soft 0.9080 full 0.9040  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5, 'k': 20}  [132s]
+soft 0.9089 full 0.9030  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5, 'tau': 0.05}  [135s]
+soft 0.9111 full 0.9057  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5, 'tau': 0.2}  [138s]
+soft 0.9002 full 0.8961  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5, 'use_p': 0.0}  [147s]
+soft 0.9114 full 0.9043  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5, 'use_p': 1.0}  [158s]
+soft 0.9093 full 0.9016  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5, 'cal_iters': 3}  [168s]
+soft 0.9104 full 0.9041  {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5, 'cal_iters': 10}  [179s]
+soft 0.9079 full 0.9022  {'emb_g': 0.5, 'link_mode': 'row', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5}  [191s]
+TOP 10:
+  soft 0.9120 full 0.9057 {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5, 'k': 5}
+  soft 0.9117 full 0.9053 {'emb_g': 1.0, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5}
+  soft 0.9114 full 0.9043 {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5, 'use_p': 1.0}
+  soft 0.9111 full 0.9057 {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5, 'tau': 0.2}
+  soft 0.9111 full 0.9049 {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 5, 'T': 2.0, 'w': 0.5}
+  soft 0.9109 full 0.9050 {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 4, 'T': 2.0, 'w': 0.5}
+  soft 0.9109 full 0.9049 {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5}
+  soft 0.9107 full 0.9042 {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -3.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5}
+  soft 0.9107 full 0.9040 {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 3.0, 'w': 0.5}
+  soft 0.9105 full 0.9050 {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -1.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5}
+combo soft 0.9113 {'emb_g': 1.0, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5, 'k': 5}
+combo soft 0.9121 {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5, 'k': 5, 'use_p': 1.0}
+combo soft 0.9122 {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 3, 'T': 2.0, 'w': 0.5, 'k': 5, 'tau': 0.2}
+combo soft 0.9127 {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 5, 'T': 2.0, 'w': 0.5, 'k': 5, 'tau': 0.2}
+combo soft 0.9123 {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 4, 'T': 2.0, 'w': 0.5, 'k': 5, 'tau': 0.2}
+combo soft 0.9117 {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -3.0, 'alpha': 0.95, 'rounds': 5, 'T': 2.0, 'w': 0.5, 'k': 5, 'tau': 0.2}
+combo soft 0.9121 {'emb_g': 1.0, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 5, 'T': 2.0, 'w': 0.5, 'k': 5, 'tau': 0.2}
+combo soft 0.9127 {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 5, 'T': 2.0, 'w': 0.5, 'k': 5, 'tau': 0.2, 'use_p': 1.0}
+combo soft 0.9123 {'emb_g': 0.5, 'link_mode': 'abs', 'beta': 0.8, 'link_b': -2.0, 'alpha': 0.95, 'rounds': 4, 'T': 2.0, 'w': 0.5, 'k': 5, 'tau': 0.2}
+ENSEMBLE top-5 soft 0.9124
+wrote submission_gsweep_top5.csv: counts [5413, 384, 353, 339, 374, 349, 385, 391, 350, 390, 419, 395, 368, 374, 439, 405, 375, 362, 369]
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 350559 bytes to __results__.html

@@ -1,0 +1,94 @@
+config: {"threads": 4, "tag": "L5", "p_link": "blend7", "nl_tags": ["v2", "v3"], "cs_weights": [0.3, 0.4, 0.5], "entry": "l5"}
+
+===== W1 preprocessing | start at 0.2 min
+sbj_0: T=139725 (2794s) F=83835
+sbj_0_2: T=112050 (2241s) F=67230
+sbj_1: T=138900 (2778s) F=83340
+sbj_10: T=199250 (3985s) F=119550
+sbj_11: T=111100 (2222s) F=66660
+sbj_12: T=163500 (3270s) F=98100
+sbj_13: T=198900 (3978s) F=119340
+sbj_14: T=160050 (3201s) F=96030
+sbj_14_2: T=167750 (3355s) F=100650
+sbj_15: T=130150 (2603s) F=78090
+sbj_16: T=175500 (3510s) F=105300
+sbj_17: T=154550 (3091s) F=92730
+sbj_18: T=131600 (2632s) F=78960
+sbj_19: T=105450 (2109s) F=63270
+sbj_2: T=178200 (3564s) F=106920
+sbj_20: T=95400 (1908s) F=57240
+sbj_21: T=127800 (2556s) F=76680
+sbj_3: T=208550 (4171s) F=125130
+sbj_4: T=159575 (3192s) F=95745
+sbj_5: T=107525 (2150s) F=64515
+sbj_6: T=125175 (2504s) F=75105
+sbj_7: T=142650 (2853s) F=85590
+sbj_8: T=124750 (2495s) F=74850
+sbj_9: T=108300 (2166s) F=64980
+===== W1 preprocessing | 1.3 min (total 1.5 min) | RSS 0.3 GB, peak 2.7 GB
+
+===== W2 test-like OOF windows | start at 1.5 min
+===== W2 test-like OOF windows | 0.1 min (total 1.6 min) | RSS 0.3 GB, peak 2.7 GB
+link features use 'blend7' probabilities (OOF F1 0.9067)
+
+===== L5 links | start at 1.6 min
+ridge stats fold 0: 71722 tile pairs [151s]
+ridge stats fold 1: 64934 tile pairs [201s]
+ridge stats fold 2: 73080 tile pairs [252s]
+ridge stats fold 3: 63804 tile pairs [297s]
+ridge stats fold 4: 72882 tile pairs [348s]
+ridge r2 (forward, backward): [(0.579, 0.58), (0.58, 0.58), (0.586, 0.587), (0.585, 0.586), (0.58, 0.581)] (Briano: about 0.58)
+L5 sbj 0 fold 1 n=5035 K=164 recall 0.980 nl-top1 0.240 nl-dual-top1 0.274 nl-dual same-label 0.834 [411s]
+L5 sbj 1 fold 3 n=2778 K=161 recall 0.981 nl-top1 0.294 nl-dual-top1 0.331 nl-dual same-label 0.801 [427s]
+L5 sbj 2 fold 4 n=3564 K=164 recall 0.972 nl-top1 0.241 nl-dual-top1 0.272 nl-dual same-label 0.849 [451s]
+L5 sbj 3 fold 2 n=4171 K=167 recall 0.977 nl-top1 0.229 nl-dual-top1 0.260 nl-dual same-label 0.897 [484s]
+L5 sbj 4 fold 1 n=3191 K=164 recall 0.971 nl-top1 0.269 nl-dual-top1 0.310 nl-dual same-label 0.822 [505s]
+L5 sbj 5 fold 0 n=2150 K=161 recall 0.974 nl-top1 0.281 nl-dual-top1 0.312 nl-dual same-label 0.816 [515s]
+L5 sbj 6 fold 4 n=2503 K=164 recall 0.990 nl-top1 0.289 nl-dual-top1 0.328 nl-dual same-label 0.846 [528s]
+L5 sbj 7 fold 2 n=2853 K=162 recall 0.972 nl-top1 0.228 nl-dual-top1 0.268 nl-dual same-label 0.799 [545s]
+L5 sbj 8 fold 3 n=2495 K=162 recall 0.978 nl-top1 0.217 nl-dual-top1 0.248 nl-dual same-label 0.871 [558s]
+L5 sbj 9 fold 1 n=2166 K=162 recall 0.952 nl-top1 0.220 nl-dual-top1 0.250 nl-dual same-label 0.796 [568s]
+L5 sbj 10 fold 3 n=3985 K=164 recall 0.982 nl-top1 0.230 nl-dual-top1 0.267 nl-dual same-label 0.894 [598s]
+L5 sbj 11 fold 2 n=2222 K=164 recall 0.973 nl-top1 0.231 nl-dual-top1 0.259 nl-dual same-label 0.856 [609s]
+L5 sbj 12 fold 2 n=3270 K=161 recall 0.976 nl-top1 0.236 nl-dual-top1 0.258 nl-dual same-label 0.873 [630s]
+L5 sbj 13 fold 4 n=3978 K=165 recall 0.979 nl-top1 0.283 nl-dual-top1 0.319 nl-dual same-label 0.889 [661s]
+L5 sbj 14 fold 0 n=6556 K=167 recall 0.976 nl-top1 0.260 nl-dual-top1 0.296 nl-dual same-label 0.852 [733s]
+L5 sbj 15 fold 1 n=2603 K=163 recall 0.990 nl-top1 0.224 nl-dual-top1 0.263 nl-dual same-label 0.858 [748s]
+L5 sbj 16 fold 3 n=3510 K=170 recall 0.966 nl-top1 0.225 nl-dual-top1 0.264 nl-dual same-label 0.848 [773s]
+L5 sbj 17 fold 0 n=3091 K=161 recall 0.982 nl-top1 0.235 nl-dual-top1 0.272 nl-dual same-label 0.890 [797s]
+L5 sbj 18 fold 4 n=2632 K=164 recall 0.971 nl-top1 0.254 nl-dual-top1 0.282 nl-dual same-label 0.845 [812s]
+L5 sbj 19 fold 2 n=2109 K=164 recall 0.977 nl-top1 0.218 nl-dual-top1 0.248 nl-dual same-label 0.833 [822s]
+L5 sbj 20 fold 4 n=1908 K=163 recall 0.950 nl-top1 0.201 nl-dual-top1 0.213 nl-dual same-label 0.805 [831s]
+L5 sbj 21 fold 0 n=2556 K=165 recall 0.990 nl-top1 0.285 nl-dual-top1 0.338 nl-dual same-label 0.863 [844s]
+L5 scorer rows 1176858 positive rate 0.0575
+L5 OOF fold 0 done [924s]
+L5 OOF fold 1 done [1001s]
+L5 OOF fold 2 done [1081s]
+L5 OOF fold 3 done [1159s]
+L5 OOF fold 4 done [1235s]
+L5 top features by gain: [('n_src', 0.252), ('rs_rank_r', 0.171), ('nld_v2_rank_c', 0.054), ('rs_domr', 0.039), ('imu_rank_r', 0.036), ('nld_v2_dom_r', 0.036), ('imu_dom_r', 0.03), ('nld_v3_dom_r', 0.029), ('bc_w', 0.026), ('mmc', 0.021), ('nld_v2_rank_r', 0.021), ('nld_v2_dom_c', 0.019), ('slope', 0.018), ('nld_v3_dom_c', 0.017), ('imu_rank_c', 0.015), ('nld_v3_rank_c', 0.013), ('ll_f_domc', 0.013), ('nld_v2_v', 0.012), ('nld_v3_rank_r', 0.012), ('dratio', 0.012)]
+L5 test sbj 22 n=5197 K=169 linked 0.958 median score 1.15
+L5 test sbj 23 n=3128 K=163 linked 0.930 median score 1.37
+L5 test sbj 24 n=1995 K=160 linked 0.963 median score 1.49
+L5 test sbj 25 n=1914 K=142 linked 0.966 median score 1.77
+L5 OOF: linked 0.952 exact(of linked) 0.612 recall(of true) 0.583 same-label 0.948
+===== L5 links | 24.0 min (total 25.6 min) | RSS 2.2 GB, peak 6.8 GB
+
+===== graph(gsweep) on the new links | start at 25.6 min
+L5_g: OOF soft 0.9191
+===== graph(gsweep) on the new links | 0.7 min (total 26.3 min) | RSS 2.2 GB, peak 6.8 GB
+
+===== multi-limb chain stacker + graph | start at 26.3 min
+cs features (69326, 504) [1602s]
+cs: nested OOF argmax macro F1 0.8629 [2016s]
+L5_cs0.3: OOF soft 0.9212
+wrote submission_L5_cs.csv: counts [5407, 376, 351, 343, 381, 356, 394, 393, 366, 391, 412, 377, 382, 373, 431, 395, 371, 366, 369]
+L5_cs0.4: OOF soft 0.9205
+L5_cs0.5: OOF soft 0.9192
+===== multi-limb chain stacker + graph | 11.2 min (total 37.5 min) | RSS 2.2 GB, peak 6.8 GB
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 385388 bytes to __results__.html

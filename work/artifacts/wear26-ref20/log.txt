@@ -1,0 +1,61 @@
+config: {"threads": 4, "tag": "ref20", "probs": "x3w40", "links": [["L2"], ["L3", "wear26-l4/"], ["L3", "wear26-l3/"], ["L3", "wear26-l6/"], ["links_L4s", "wear26-l4s/"]], "thr": [0.55, 0.6, 0.65], "rounds": 300, "entry": "refine"}
+
+===== W1 preprocessing | start at 0.1 min
+sbj_0: T=139725 (2794s) F=83835
+sbj_0_2: T=112050 (2241s) F=67230
+sbj_1: T=138900 (2778s) F=83340
+sbj_10: T=199250 (3985s) F=119550
+sbj_11: T=111100 (2222s) F=66660
+sbj_12: T=163500 (3270s) F=98100
+sbj_13: T=198900 (3978s) F=119340
+sbj_14: T=160050 (3201s) F=96030
+sbj_14_2: T=167750 (3355s) F=100650
+sbj_15: T=130150 (2603s) F=78090
+sbj_16: T=175500 (3510s) F=105300
+sbj_17: T=154550 (3091s) F=92730
+sbj_18: T=131600 (2632s) F=78960
+sbj_19: T=105450 (2109s) F=63270
+sbj_2: T=178200 (3564s) F=106920
+sbj_20: T=95400 (1908s) F=57240
+sbj_21: T=127800 (2556s) F=76680
+sbj_3: T=208550 (4171s) F=125130
+sbj_4: T=159575 (3192s) F=95745
+sbj_5: T=107525 (2150s) F=64515
+sbj_6: T=125175 (2504s) F=75105
+sbj_7: T=142650 (2853s) F=85590
+sbj_8: T=124750 (2495s) F=74850
+sbj_9: T=108300 (2166s) F=64980
+===== W1 preprocessing | 1.2 min (total 1.3 min) | RSS 0.3 GB, peak 2.7 GB
+
+===== W2 test-like OOF windows | start at 1.3 min
+===== W2 test-like OOF windows | 0.1 min (total 1.4 min) | RSS 0.3 GB, peak 2.7 GB
+input x3w40 (+ extra experts []): OOF macro F1 (soft decode) 0.9294
+links ['L2']: linked 0.949 exact 0.561 same-label 0.937
+links ['L3', 'wear26-l4/']: linked 0.956 exact 0.605 same-label 0.939
+links ['L3', 'wear26-l3/']: linked 0.953 exact 0.593 same-label 0.938
+links ['L3', 'wear26-l6/']: linked 0.956 exact 0.614 same-label 0.940
+links ['links_L4s', 'wear26-l4s/']: linked 0.947 exact 0.593 same-label 0.945
+
+===== tile scalars | start at 1.4 min
+===== tile scalars | 0.1 min (total 1.5 min) | RSS 0.7 GB, peak 2.7 GB
+
+===== refiner pass 1 | start at 1.5 min
+pass 1: 97151 candidate rows (37 features), 0.137 should flip; the windows hold 3524 of the 4981 remaining errors
+pass 1 thr 0.55: 939 OOF tiles flipped, macro F1 0.9294 -> 0.9309 | per fold 0.9337 0.9133 0.9400 0.9214 0.9453
+pass 1 thr 0.6: 762 OOF tiles flipped, macro F1 0.9294 -> 0.9313 | per fold 0.9346 0.9135 0.9397 0.9226 0.9455
+pass 1 thr 0.65: 622 OOF tiles flipped, macro F1 0.9294 -> 0.9312 | per fold 0.9349 0.9125 0.9396 0.9226 0.9460
+pass 1 test thr 0.55: 119 tiles flipped
+wrote submission_ref20_p1_thr0.55.csv: counts [5362, 394, 349, 341, 381, 352, 393, 384, 365, 414, 415, 370, 407, 370, 432, 394, 381, 370, 360]
+pass 1 test thr 0.6: 92 tiles flipped
+wrote submission_ref20_p1_thr0.6.csv: counts [5361, 394, 349, 340, 380, 353, 395, 382, 365, 414, 415, 375, 401, 372, 431, 395, 381, 370, 361]
+pass 1 test thr 0.65: 71 tiles flipped
+wrote submission_ref20_p1_thr0.65.csv: counts [5360, 394, 350, 340, 379, 352, 395, 382, 365, 414, 415, 375, 400, 371, 431, 394, 385, 370, 362]
+===== refiner pass 1 | 0.4 min (total 2.0 min) | RSS 0.8 GB, peak 2.7 GB
+wrote submission_ref20.csv: counts [5361, 394, 349, 340, 380, 353, 395, 382, 365, 414, 415, 375, 401, 372, 431, 395, 381, 370, 361]
+final OOF 0.9294 -> 0.9313
+/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 405999 bytes to __results__.html

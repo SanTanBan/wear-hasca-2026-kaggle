@@ -1,0 +1,1 @@
+{"epochs": 30, "eval_every": 10, "tag": "v3", "arch": "full", "dv": 256, "de": 128, "block": 800, "lr": 0.002, "vnoise": 0.1, "seed": 1}

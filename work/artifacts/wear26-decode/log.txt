@@ -1,0 +1,43 @@
+config: {"threads": 4, "write_test": true, "entry": "decode"}
+base graph+calibration (saved)                          OOF macro F1 0.9050
+per-class F1: {'null': 0.907, 'jogging': 0.929, 'jogging (rotat': 0.893, 'jogging (skipp': 0.917, 'jogging (sides': 0.919, 'jogging (butt-': 0.919, 'stretching (tr': 0.954, 'stretching (lu': 0.948, 'stretching (sh': 0.9, 'stretching (ha': 0.911, 'push-ups': 0.876, 'push-ups (comp': 0.858, 'sit-ups': 0.899, 'sit-ups (compl': 0.91, 'burpees': 0.93, 'lunges': 0.87, 'lunges (comple': 0.867, 'bench-dips': 0.86}
+error rate near label boundaries 0.308 (0.082 of tiles), elsewhere 0.075
+per-subject macro F1: {0: 0.882, 1: 0.903, 2: 0.86, 3: 0.899, 4: 0.782, 5: 0.865, 6: 0.945, 7: 0.875, 8: 0.959, 9: 0.928, 10: 0.783, 11: 0.959, 12: 0.902, 13: 0.957, 14: 0.866, 15: 0.938, 16: 0.94, 17: 0.97, 18: 0.937, 19: 0.93, 20: 0.926, 21: 0.946}
+top confusions (true -> pred): [(398, 'null', 'bench-dips'), (302, 'push-ups (complex)', 'push-ups'), (250, 'stretching (lunging)', 'null'), (241, 'lunges (complex)', 'null'), (237, 'jogging (sidesteps)', 'null'), (228, 'null', 'push-ups (complex)'), (219, 'null', 'stretching (shoulders)'), (213, 'stretching (hamstrings)', 'null'), (212, 'bench-dips', 'null'), (194, 'stretching (shoulders)', 'null'), (186, 'null', 'jogging (butt-kicks)'), (185, 'null', 'stretching (hamstrings)'), (167, 'lunges', 'null'), (158, 'lunges', 'lunges (complex)'), (155, 'burpees', 'null')]
+L0 chains: 5228 chains, median len 2, mean 13.3, tiles in chains >=20: 0.756, label-pure chains 0.873, tiles in pure chains 0.272
+L2 chains: 3523 chains, median len 3, mean 19.7, tiles in chains >=20: 0.816, label-pure chains 0.902, tiles in pure chains 0.253
+graph with L2 links                                     OOF macro F1 0.9050  [18s]
+  + chain Viterbi pen 2.0                               OOF macro F1 0.9036
+  + chain Viterbi pen 4.0                               OOF macro F1 0.9006
+  + chain Viterbi pen 8.0                               OOF macro F1 0.8957
+graph with ORACLE true links (score 5)                  OOF macro F1 0.9304  [17s]
+  + chain Viterbi pen 2.0                               OOF macro F1 0.9355
+  + chain Viterbi pen 4.0                               OOF macro F1 0.9371
+  + chain Viterbi pen 8.0                               OOF macro F1 0.9361
+calib T=0.35 per_ex=92                                  OOF macro F1 0.9031
+calib T=0.35 per_ex=97                                  OOF macro F1 0.9024
+calib T=0.35 per_ex=102                                 OOF macro F1 0.8953
+calib T=0.5 per_ex=92                                   OOF macro F1 0.9047
+calib T=0.5 per_ex=97                                   OOF macro F1 0.9050
+calib T=0.5 per_ex=102                                  OOF macro F1 0.8985
+calib T=0.7 per_ex=92                                   OOF macro F1 0.9056
+calib T=0.7 per_ex=97                                   OOF macro F1 0.9064
+calib T=0.7 per_ex=102                                  OOF macro F1 0.9014
+mean tiles per exercise (fold 0 targets): [105.0, 90.0, 96.0, 104.0, 92.0, 96.0, 102.0, 95.0, 96.0, 98.0, 91.0, 98.0, 102.0, 102.0, 97.0, 99.0, 102.0, 88.0]
+per-class count CV across subjects: [0.22, 0.23, 0.22, 0.29, 0.11, 0.11, 0.14, 0.07, 0.11, 0.14, 0.11, 0.14, 0.21, 0.11, 0.12, 0.12, 0.14, 0.11]
+calib T=0.5 class-specific targets                      OOF macro F1 0.9047
+calib T=0.5 per_ex=97 sinkhorn iters=3                  OOF macro F1 0.9104
+calib T=0.5 per_ex=97 sinkhorn iters=10                 OOF macro F1 0.9081
+no calibration (argmax of graph P)                      OOF macro F1 0.8876
+cs features (69326, 244) [68s]
+cs: nested OOF argmax macro F1 0.8410 [236s]
+chainstack(logp_b) w=1.0 + graph(L2)                    OOF macro F1 0.8961
+wrote submission_cs_w1.0.csv: counts [5238, 391, 366, 356, 387, 374, 402, 398, 381, 405, 408, 396, 367, 389, 415, 412, 393, 376, 380]
+chainstack(logp_b) w=0.5 + graph(L2)                    OOF macro F1 0.9042
+wrote submission_cs_w0.5.csv: counts [5244, 389, 375, 360, 386, 366, 400, 395, 379, 401, 408, 403, 369, 386, 414, 407, 393, 375, 384]
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 347970 bytes to __results__.html

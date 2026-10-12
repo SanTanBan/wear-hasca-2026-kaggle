@@ -1,0 +1,1 @@
+{"tag": "c1", "epochs": 6, "bs": 256, "dim": 256, "lr": 0.001, "enc_lr": 0.0003, "init_from": "final_s0", "nb_drop": 0.15, "links_from": "wear26-l4"}

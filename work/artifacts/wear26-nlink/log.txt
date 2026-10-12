@@ -1,0 +1,108 @@
+config: {"epochs": 60, "eval_every": 20, "tag": "v1", "dv": 256, "de": 128, "lr": 0.001, "vnoise": 0.1, "seed": 0, "entry": "nlink"}
+
+===== W1 preprocessing | start at 0.0 min
+sbj_0: T=139725 (2794s) F=83835
+sbj_0_2: T=112050 (2241s) F=67230
+sbj_1: T=138900 (2778s) F=83340
+sbj_10: T=199250 (3985s) F=119550
+sbj_11: T=111100 (2222s) F=66660
+sbj_12: T=163500 (3270s) F=98100
+sbj_13: T=198900 (3978s) F=119340
+sbj_14: T=160050 (3201s) F=96030
+sbj_14_2: T=167750 (3355s) F=100650
+sbj_15: T=130150 (2603s) F=78090
+sbj_16: T=175500 (3510s) F=105300
+sbj_17: T=154550 (3091s) F=92730
+sbj_18: T=131600 (2632s) F=78960
+sbj_19: T=105450 (2109s) F=63270
+sbj_2: T=178200 (3564s) F=106920
+sbj_20: T=95400 (1908s) F=57240
+sbj_21: T=127800 (2556s) F=76680
+sbj_3: T=208550 (4171s) F=125130
+sbj_4: T=159575 (3192s) F=95745
+sbj_5: T=107525 (2150s) F=64515
+sbj_6: T=125175 (2504s) F=75105
+sbj_7: T=142650 (2853s) F=85590
+sbj_8: T=124750 (2495s) F=74850
+sbj_9: T=108300 (2166s) F=64980
+===== W1 preprocessing | 1.6 min (total 1.6 min) | RSS 0.3 GB, peak 2.7 GB
+
+===== W2 test-like OOF windows | start at 1.6 min
+===== W2 test-like OOF windows | 0.1 min (total 1.7 min) | RSS 0.3 GB, peak 2.7 GB
+nlink device cpu
+
+===== nlink fold 0 | start at 2.5 min
+[fold 0] ep 1/60 loss 15.168 [240s]
+[fold 0] ep 11/60 loss 4.407 [1070s]
+[fold 0] ep 20/60 loss 2.585 tau 0.034 held-out top1 0.292 rec@20 0.838 dual-top1 0.338 [1811s]
+[fold 0] ep 21/60 loss 2.416 [1893s]
+[fold 0] ep 31/60 loss 1.286 [2725s]
+[fold 0] ep 40/60 loss 0.787 tau 0.026 held-out top1 0.262 rec@20 0.798 dual-top1 0.301 [3482s]
+[fold 0] ep 41/60 loss 0.751 [3563s]
+[fold 0] ep 51/60 loss 0.536 [4392s]
+[fold 0] ep 60/60 loss 0.502 tau 0.025 held-out top1 0.256 rec@20 0.790 dual-top1 0.295 [5149s]
+===== nlink fold 0 | 83.3 min (total 85.8 min) | RSS 5.7 GB, peak 6.8 GB
+
+===== nlink fold 1 | start at 86.2 min
+[fold 1] ep 1/60 loss 15.299 [5254s]
+[fold 1] ep 11/60 loss 4.374 [6093s]
+[fold 1] ep 20/60 loss 2.585 tau 0.034 held-out top1 0.273 rec@20 0.827 dual-top1 0.315 [6843s]
+[fold 1] ep 21/60 loss 2.390 [6926s]
+[fold 1] ep 31/60 loss 1.293 [7758s]
+[fold 1] ep 40/60 loss 0.781 tau 0.027 held-out top1 0.245 rec@20 0.779 dual-top1 0.282 [8510s]
+[fold 1] ep 41/60 loss 0.739 [8592s]
+[fold 1] ep 51/60 loss 0.531 [9447s]
+[fold 1] ep 60/60 loss 0.494 tau 0.025 held-out top1 0.237 rec@20 0.772 dual-top1 0.273 [10215s]
+===== nlink fold 1 | 84.1 min (total 170.3 min) | RSS 6.0 GB, peak 7.1 GB
+
+===== nlink fold 2 | start at 170.5 min
+[fold 2] ep 1/60 loss 14.993 [10311s]
+[fold 2] ep 11/60 loss 4.448 [11103s]
+[fold 2] ep 20/60 loss 2.543 tau 0.034 held-out top1 0.273 rec@20 0.834 dual-top1 0.312 [11828s]
+[fold 2] ep 21/60 loss 2.409 [11907s]
+[fold 2] ep 31/60 loss 1.272 [12705s]
+[fold 2] ep 40/60 loss 0.763 tau 0.027 held-out top1 0.241 rec@20 0.784 dual-top1 0.276 [13429s]
+[fold 2] ep 41/60 loss 0.725 [13507s]
+[fold 2] ep 51/60 loss 0.517 [14314s]
+[fold 2] ep 60/60 loss 0.483 tau 0.025 held-out top1 0.234 rec@20 0.777 dual-top1 0.267 [15039s]
+===== nlink fold 2 | 80.1 min (total 250.7 min) | RSS 6.0 GB, peak 7.1 GB
+
+===== nlink fold 3 | start at 251.0 min
+[fold 3] ep 1/60 loss 15.028 [15139s]
+[fold 3] ep 11/60 loss 4.366 [15979s]
+[fold 3] ep 20/60 loss 2.550 tau 0.034 held-out top1 0.278 rec@20 0.835 dual-top1 0.319 [16723s]
+[fold 3] ep 21/60 loss 2.385 [16803s]
+[fold 3] ep 31/60 loss 1.278 [17631s]
+[fold 3] ep 40/60 loss 0.766 tau 0.026 held-out top1 0.247 rec@20 0.792 dual-top1 0.284 [18380s]
+[fold 3] ep 41/60 loss 0.727 [18462s]
+[fold 3] ep 51/60 loss 0.525 [19280s]
+[fold 3] ep 60/60 loss 0.483 tau 0.025 held-out top1 0.238 rec@20 0.779 dual-top1 0.274 [20052s]
+===== nlink fold 3 | 83.2 min (total 334.2 min) | RSS 6.1 GB, peak 7.2 GB
+
+===== nlink fold 4 | start at 334.5 min
+[fold 4] ep 1/60 loss 15.143 [20158s]
+[fold 4] ep 11/60 loss 4.441 [20970s]
+[fold 4] ep 20/60 loss 2.567 tau 0.034 held-out top1 0.285 rec@20 0.839 dual-top1 0.327 [21715s]
+[fold 4] ep 21/60 loss 2.400 [21795s]
+[fold 4] ep 31/60 loss 1.273 [22597s]
+[fold 4] ep 40/60 loss 0.762 tau 0.026 held-out top1 0.261 rec@20 0.797 dual-top1 0.295 [23332s]
+[fold 4] ep 41/60 loss 0.733 [23412s]
+[fold 4] ep 51/60 loss 0.521 [24230s]
+[fold 4] ep 60/60 loss 0.485 tau 0.025 held-out top1 0.253 rec@20 0.787 dual-top1 0.288 [24970s]
+===== nlink fold 4 | 81.7 min (total 416.2 min) | RSS 6.1 GB, peak 7.2 GB
+
+===== nlink fold all | start at 416.5 min
+[fold all] ep 1/60 loss 14.497 [25092s]
+[fold all] ep 11/60 loss 4.360 [26121s]
+[fold all] ep 21/60 loss 2.423 [27145s]
+[fold all] ep 31/60 loss 1.382 [28245s]
+[fold all] ep 41/60 loss 0.838 [29372s]
+[fold all] ep 51/60 loss 0.606 [30397s]
+===== nlink fold all | 105.5 min (total 522.0 min) | RSS 6.1 GB, peak 7.2 GB
+nlink report {'fold0': [0.2564, 0.7905, 0.2951], 'fold1': [0.2371, 0.7717, 0.273], 'fold2': [0.2338, 0.7766, 0.2674], 'fold3': [0.2384, 0.7793, 0.2736], 'fold4': [0.2528, 0.7867, 0.2882], 'taus': [0.025301748886704445, 0.025445211678743362, 0.025392988696694374, 0.024858783930540085, 0.025257833302021027, 0.022660886868834496]}
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 327569 bytes to __results__.html

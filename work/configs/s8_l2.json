@@ -1,0 +1,1 @@
+{"threads": 4, "tag": "s8", "links": "L2", "multilimb": true, "ml2": true, "chain_windows": true, "rounds": 80, "lgb": {"seed": 8}, "weights": [0.4, 0.5]}

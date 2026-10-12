@@ -1,0 +1,18 @@
+config: {"threads": 4, "entry": "linkexp"}
+qn score >= 0.0: kept 0.645 of tiles, same-label 0.963
+qn score >= 1.0: kept 0.458 of tiles, same-label 0.972
+qn score >= 2.0: kept 0.274 of tiles, same-label 0.978
+L2                                  full-cal 0.9050 soft-cal 0.9104 [19s]
+ORACLE                              full-cal 0.9304 soft-cal 0.9361 [18s]
+L2 cross-label cut                  full-cal 0.9208 soft-cal 0.9259 [18s]
+L2 cross-label -> true succ         full-cal 0.9247 soft-cal 0.9299 [18s]
+random same-label chain             full-cal 0.9851 soft-cal 0.9940 [18s]
+L2 cut below qn score 0.0           full-cal 0.8984 soft-cal 0.9021 [18s]
+L2 cut below qn score 1.0           full-cal 0.8928 soft-cal 0.8956 [18s]
+L2 cut below qn score 2.0           full-cal 0.8869 soft-cal 0.8902 [18s]
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 361604 bytes to __results__.html

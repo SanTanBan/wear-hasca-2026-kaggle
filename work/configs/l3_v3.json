@@ -1,0 +1,1 @@
+{"threads": 4, "nl_tag": "v3", "kr": 20, "kc": 10, "chainstack": true, "multilimb": true, "cs_weights": [1.0, 0.5], "nl_emb_graph": true, "cs_on_l2": true}

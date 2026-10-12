@@ -1,0 +1,52 @@
+config: {"threads": 4, "tag": "s7", "links_from": "wear26-l4", "multilimb": true, "ml2": true, "chain_windows": true, "rounds": 160, "lgb": {"learning_rate": 0.04, "seed": 7}, "weights": [0.4, 0.5], "entry": "s4"}
+
+===== W1 preprocessing | start at 0.1 min
+sbj_0: T=139725 (2794s) F=83835
+sbj_0_2: T=112050 (2241s) F=67230
+sbj_1: T=138900 (2778s) F=83340
+sbj_10: T=199250 (3985s) F=119550
+sbj_11: T=111100 (2222s) F=66660
+sbj_12: T=163500 (3270s) F=98100
+sbj_13: T=198900 (3978s) F=119340
+sbj_14: T=160050 (3201s) F=96030
+sbj_14_2: T=167750 (3355s) F=100650
+sbj_15: T=130150 (2603s) F=78090
+sbj_16: T=175500 (3510s) F=105300
+sbj_17: T=154550 (3091s) F=92730
+sbj_18: T=131600 (2632s) F=78960
+sbj_19: T=105450 (2109s) F=63270
+sbj_2: T=178200 (3564s) F=106920
+sbj_20: T=95400 (1908s) F=57240
+sbj_21: T=127800 (2556s) F=76680
+sbj_3: T=208550 (4171s) F=125130
+sbj_4: T=159575 (3192s) F=95745
+sbj_5: T=107525 (2150s) F=64515
+sbj_6: T=125175 (2504s) F=75105
+sbj_7: T=142650 (2853s) F=85590
+sbj_8: T=124750 (2495s) F=74850
+sbj_9: T=108300 (2166s) F=64980
+===== W1 preprocessing | 1.2 min (total 1.4 min) | RSS 0.3 GB, peak 2.7 GB
+
+===== W2 test-like OOF windows | start at 1.4 min
+===== W2 test-like OOF windows | 0.1 min (total 1.4 min) | RSS 0.3 GB, peak 2.7 GB
+
+===== tabular features | start at 1.5 min
+===== tabular features | 0.6 min (total 2.1 min) | RSS 0.9 GB, peak 3.0 GB
+
+===== multi-limb neighbour features | start at 2.1 min
+===== multi-limb neighbour features | 0.5 min (total 2.6 min) | RSS 1.3 GB, peak 3.0 GB
+S4 features (69326, 1310)
+
+===== S4 nested OOF | start at 2.7 min
+===== S4 nested OOF | 14.2 min (total 16.9 min) | RSS 3.3 GB, peak 3.3 GB
+S4 nested OOF argmax 0.8633 (S3 0.8142, S3b 0.8216)
+tab blend (window, S4@0.4, T@0.3) + graph(gsweep, L4 links): OOF soft 0.9218
+wrote submission_s7.csv: counts [5408, 380, 348, 346, 380, 351, 395, 382, 355, 387, 414, 378, 377, 378, 436, 402, 376, 371, 370]
+tab blend (window, S4@0.5, T@0.3) + graph(gsweep, L4 links): OOF soft 0.9223
+wrote submission_s7.csv: counts [5408, 379, 347, 349, 381, 347, 392, 384, 355, 387, 414, 378, 376, 378, 437, 401, 379, 373, 369]
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 397177 bytes to __results__.html

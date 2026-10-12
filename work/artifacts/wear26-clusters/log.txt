@@ -1,0 +1,15 @@
+config: {"threads": 4, "graph_run": "gsweep", "entry": "clusters"}
+input graph probs (gsweep) soft-cal OOF 0.9124
+thr_l=0.5 thr_k=0.8: 2848 clusters, purity 0.9212, tiles in clusters>=20 0.919 | lam 0.3: 0.9087 | lam 0.5: 0.9044 | lam 0.8: 0.8961
+thr_l=0.5 thr_k=0.85: 4056 clusters, purity 0.9275, tiles in clusters>=20 0.868 | lam 0.3: 0.9091 | lam 0.5: 0.9051 | lam 0.8: 0.8981
+thr_l=0.5 thr_k=0.9: 8913 clusters, purity 0.9497, tiles in clusters>=20 0.651 | lam 0.3: 0.9112 | lam 0.5: 0.9093 | lam 0.8: 0.9054
+thr_l=1.5 thr_k=0.8: 4424 clusters, purity 0.9273, tiles in clusters>=20 0.870 | lam 0.3: 0.9093 | lam 0.5: 0.9051 | lam 0.8: 0.8984
+thr_l=1.5 thr_k=0.85: 6579 clusters, purity 0.9366, tiles in clusters>=20 0.790 | lam 0.3: 0.9101 | lam 0.5: 0.9066 | lam 0.8: 0.8997
+thr_l=1.5 thr_k=0.9: 14125 clusters, purity 0.9597, tiles in clusters>=20 0.543 | lam 0.3: 0.9111 | lam 0.5: 0.9096 | lam 0.8: 0.9060
+best (0.9123922230860649, None)
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 378657 bytes to __results__.html

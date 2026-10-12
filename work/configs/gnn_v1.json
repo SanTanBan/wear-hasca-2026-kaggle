@@ -1,0 +1,1 @@
+{"threads": 4, "epochs": 150, "lr": 0.002, "hidden": 96, "layers": 3, "feat_drop": 0.1, "graph_run": "gsweep"}
